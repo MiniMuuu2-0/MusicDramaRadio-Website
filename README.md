@@ -83,6 +83,19 @@ npm run build
 
 I file ottimizzati saranno generati nella cartella `dist/`.
 
+### GitHub Pages
+
+Il sito viene automaticamente deployato su GitHub Pages tramite GitHub Actions quando viene fatto push sul branch `main`. Il workflow:
+
+1. Installa le dipendenze
+2. Esegue il linting
+3. Crea la build di produzione
+4. Deploya su GitHub Pages
+
+Per abilitare GitHub Pages:
+1. Vai su Settings > Pages nel repository
+2. Seleziona "GitHub Actions" come source
+
 ## 📄 Licenza
 
 Questo progetto è privato e proprietario di Music Drama Radio.
