@@ -46,6 +46,17 @@ function Navbar() {
               {isActive('/artists') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
             <Link 
+              to="/blog" 
+              className={`text-sm transition-all duration-200 relative ${
+                isActive('/blog') 
+                  ? 'text-black dark:text-white font-medium' 
+                  : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
+              }`}
+            >
+              Blog
+              {isActive('/blog') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
+            </Link>
+            <Link 
               to="/interviews" 
               className={`text-sm transition-all duration-200 relative ${
                 isActive('/interviews') 
@@ -55,17 +66,6 @@ function Navbar() {
             >
               Interviews
               {isActive('/interviews') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
-            </Link>
-            <Link 
-              to="/about" 
-              className={`text-sm transition-all duration-200 relative ${
-                isActive('/about') 
-                  ? 'text-black dark:text-white font-medium' 
-                  : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
-              }`}
-            >
-              About
-              {isActive('/about') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
           </div>
           
@@ -178,6 +178,17 @@ function Navbar() {
                   Artists
                 </Link>
                 <Link 
+                  to="/blog" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block py-2 text-base ${
+                    isActive('/blog') 
+                      ? 'text-black dark:text-white font-medium' 
+                      : 'text-gray-600 dark:text-gray-400'
+                  }`}
+                >
+                  Blog
+                </Link>
+                <Link 
                   to="/interviews" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-2 text-base ${
@@ -187,17 +198,6 @@ function Navbar() {
                   }`}
                 >
                   Interviews
-                </Link>
-                <Link 
-                  to="/about" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block py-2 text-base ${
-                    isActive('/about') 
-                      ? 'text-black dark:text-white font-medium' 
-                      : 'text-gray-600 dark:text-gray-400'
-                  }`}
-                >
-                  About
                 </Link>
               </div>
             </div>

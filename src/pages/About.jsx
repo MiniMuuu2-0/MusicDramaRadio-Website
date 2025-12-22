@@ -26,18 +26,18 @@ function About() {
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
-                  Music Drama è un programma radiofonico e un progetto ideato da Cinzia Alberti nel febbraio 2022.
-                  Va in onda su Radio Panda 96.3 e su MixCloud.
+                  Music Drama is a radio program and project created by Cinzia Alberti in February 2022.
+                  It airs on Radio Panda 96.3 and on MixCloud.
                 </p>
                 <p>
-                  Il nostro percorso è dedicato alla cultura coreana e thailandese, con particolare attenzione a tradizioni, 
-                  abitudini, stili di vita e alle più recenti produzioni musicali e cinematografiche.
+                  Our journey is dedicated to Korean and Thai culture, with particular attention to traditions, 
+                  habits, lifestyles and the latest musical and cinematographic productions.
                 </p>
                 <p>
-                  Il progetto si sviluppa grazie al lavoro di un team di persone con competenze diverse.
+                  The project develops thanks to the work of a team of people with different skills.
                 </p>
                 <p className="text-sm italic text-gray-600 dark:text-gray-400">
-                  *Music Drama non ha scopo di lucro e attualmente non ha scopo commerciale.
+                  *Music Drama is non-profit and currently has no commercial purpose.
                 </p>
               </div>
             </div>
@@ -51,8 +51,8 @@ function About() {
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-black dark:text-white">Our Mission</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Portare la cultura coreana e thailandese al pubblico italiano attraverso contenuti 
-                    autentici che celebrano tradizioni, musica e cinematografia di questi paesi.
+                    Bringing Korean and Thai culture to the Italian public through authentic content 
+                    that celebrates traditions, music and cinematography of these countries.
                   </p>
                 </div>
               </div>
@@ -118,10 +118,10 @@ function About() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-black dark:text-white">
-              Il Nostro Team
+              Our Team
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Un gruppo di 7 collaboratori appassionati di cultura asiatica
+              A group of 7 collaborators passionate about Asian culture
             </p>
           </div>
           
@@ -140,7 +140,7 @@ function About() {
                   <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Cinzia Alberti</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Founder & Host</p>
                   <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Tecnico dei Servizi Sociali, scopre i K-Drama nel 2016. Fondatrice di Music Drama su Radio Panda 96.3 e VisiOnAir Radio.
+                    Social Services Technician, discovered K-Drama in 2016. Founder of Music Drama on Radio Panda 96.3 and VisiOnAir Radio.
                   </p>
                 </div>
               </div>
@@ -160,23 +160,116 @@ function About() {
                   <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Anna Cozzolino</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Content Creator</p>
                   <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Studentessa in Scienze della Formazione con passione per la musica thai. Interprete e traduttrice per Music Drama.
+                    University student in Educational Sciences with a passion for Thai music. Interpreter and translator for Music Drama.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="my-12 flex items-center justify-center">
+            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-full max-w-md"></div>
+          </div>
+
+          {/* Other Team Members */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-items-center">
+            {/* Saverio Lombardi */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/SaverioLombardi.jpg" 
+                    alt="Saverio Lombardi" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Saverio Lombardi</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Speaker</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Traveling speaker since 1988, touring Italian radios. Always on point at any time of day or night.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Placeholder per altri collaboratori */}
+            {/* DJ Quarto */}
             <div className="group cursor-pointer">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl">
-                <div className="w-48 h-56 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-lg mb-3 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white">+5</span>
-                  </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform -rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/DjQuarto.jpg" 
+                    alt="DJ Quarto" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="text-center">
-                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Altri Collaboratori</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Team Members</p>
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">DJ Quarto</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Director & Speaker</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Director and radio speaker. Started in 2022, joined Music Drama in 2023. Director of La Buca del Rock.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Sofia Porta */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/SofiaPorta .jpg" 
+                    alt="Sofia Porta" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Sofia Porta</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Actress & Voice Actor</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Actress, voice actor and speaker. Worked on Music Drama for the entire second season (Oct 2023 - Jun 2024).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Isabella Deborah Bonomo */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform -rotate-1 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/IsabellaDeborahBonomo .jpg" 
+                    alt="Isabella Deborah Bonomo" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Isabella D. Bonomo</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Translator & Editor</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Also known as Yishan B. Translator, video editor and maker for Music Drama in the Tilly Birds project.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Angelina Faggion */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/AngelinaFaggion.jpg" 
+                    alt="Angelina Faggion" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Angelina Faggion</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Collaborator</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Passionate about Oriental culture. Discovered K-Drama and K-pop, traveled to Seoul in 2019. Collaborated until June 2024.
+                  </p>
                 </div>
               </div>
             </div>
