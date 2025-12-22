@@ -1,6 +1,6 @@
 function ScrollIndicator() {
   return (
-    <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+    <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
       <div className="flex flex-col items-center">
         <span className="text-gray-400 dark:text-gray-500 text-sm mb-2">Scroll</span>
         <svg 

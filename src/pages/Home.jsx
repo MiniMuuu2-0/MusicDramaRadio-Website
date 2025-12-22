@@ -31,7 +31,7 @@ function Home() {
   return (
     <div className="bg-stone-50 dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative">
+      <section className="min-h-screen flex items-center justify-center relative w-full">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-semibold text-black dark:text-white mb-8 sm:mb-12 tracking-tight leading-tight animate-fade-in">
             Music Drama Radio
