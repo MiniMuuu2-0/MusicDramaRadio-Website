@@ -7,9 +7,21 @@ function About() {
       <section className="pt-20 pb-16 sm:pt-32 sm:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h1 className="text-4xl sm:text-6xl font-semibold text-black dark:text-white mb-6 sm:mb-8 tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-semibold text-black dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight">
             About Music Drama Radio
           </h1>
+          <div className="flex items-center justify-center mb-6 sm:mb-8">
+            <div className="flex items-center space-x-4 text-lg sm:text-xl text-gray-600 dark:text-gray-400">
+              <span className="flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                Since 2022
+              </span>
+              <span className="text-gray-400">•</span>
+              <span>Radio Panda 96.3</span>
+            </div>
+          </div>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
             Your ultimate destination for K-pop, T-pop, K-drama content and Korean culture insights.
           </p>
@@ -107,6 +119,56 @@ function About() {
               <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">Innovation</h3>
               <p className="text-gray-700 dark:text-gray-300">
                 Constantly evolving our content and approach to bring you fresh perspectives on Korean entertainment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Shows Section */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-black dark:text-white">
+              Our Shows
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Discover our radio programs dedicated to Asian culture
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-black dark:text-white mb-1">Music Drama</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Monthly • 2 hours • Radio Panda 96.3</p>
+                </div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Our flagship program exploring Korean and Thai culture through music, interviews, and cultural insights. Broadcasting monthly with exclusive content and artist interviews.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-black dark:text-white mb-1">Living Room</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Weekly • Tuesdays 9 PM • Radio Panda 96.3</p>
+                </div>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Cinzia's weekly show bringing intimate conversations and cultural discussions. Every Tuesday at 9 PM, creating a cozy atmosphere for music and stories.
               </p>
             </div>
           </div>
@@ -286,7 +348,7 @@ function About() {
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
             Discover exclusive interviews, read our latest articles, and become part of our growing community.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link 
               to="/interviews" 
               className="inline-block bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -299,6 +361,33 @@ function About() {
             >
               Read Our Blog
             </Link>
+          </div>
+          
+          {/* External Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <a 
+              href="https://radiopanda.it" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-black dark:hover:text-white transition-colors"
+            >
+              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+              </svg>
+              Radio Panda 96.3
+            </a>
+            <span className="hidden sm:block text-gray-400">•</span>
+            <a 
+              href="https://mixcloud.com/musicdrama" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:text-black dark:hover:text-white transition-colors"
+            >
+              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M2.5 12C2.5 6.2 7.2 1.5 13 1.5S23.5 6.2 23.5 12 18.8 22.5 13 22.5 2.5 17.8 2.5 12zm8.5 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm6 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+              </svg>
+              Listen on MixCloud
+            </a>
           </div>
         </div>
       </section>
