@@ -173,7 +173,7 @@ function About() {
           </div>
 
           {/* Other Team Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12 justify-items-center">
             {/* Saverio Lombardi */}
             <div className="group cursor-pointer">
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
