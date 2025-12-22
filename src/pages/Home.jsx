@@ -40,7 +40,7 @@ function Home() {
           </h1>
           <div className="text-lg sm:text-xl lg:text-3xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-16 max-w-4xl mx-auto leading-relaxed font-light">
             <TypewriterText 
-              text="Your reference point for K-pop, T-pop, Asian Series and Korean culture" 
+              text="Your reference point for K-pop, T-pop, Asian Series and Asian culture" 
               speed={30}
               delay={500}
             />
