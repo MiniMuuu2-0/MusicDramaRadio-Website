@@ -35,21 +35,21 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20 animate-pulse"></div>
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-semibold text-black dark:text-white mb-8 sm:mb-12 tracking-tight leading-tight animate-fade-in">
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-semibold text-black dark:text-white mb-6 sm:mb-12 tracking-tight leading-tight animate-fade-in">
             Music Drama Radio
           </h1>
-          <div className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-400 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+          <div className="text-lg sm:text-xl lg:text-3xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-16 max-w-4xl mx-auto leading-relaxed font-light">
             <TypewriterText 
-              text="Your reference point for K-pop, K-drama and Korean culture" 
+              text="Your reference point for K-pop, T-pop, K-drama and Korean culture" 
               speed={30}
               delay={500}
             />
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link to="/interviews" className="inline-block bg-black dark:bg-white text-white dark:text-black px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+            <Link to="/interviews" className="w-full sm:w-auto inline-block bg-black dark:bg-white text-white dark:text-black px-6 sm:px-12 py-3 sm:py-5 rounded-full text-base sm:text-xl font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center">
               Discover Interviews
             </Link>
-            <Link to="/blog" className="inline-block border-2 border-black dark:border-white text-black dark:text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <Link to="/blog" className="w-full sm:w-auto inline-block border-2 border-black dark:border-white text-black dark:text-white px-6 sm:px-12 py-3 sm:py-5 rounded-full text-base sm:text-xl font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center">
               Read Blog
             </Link>
           </div>
@@ -59,9 +59,9 @@ function Home() {
       {/* Latest Updates */}
       <section className="py-16 sm:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-black dark:text-white">Latest Updates</h2>
-            <p className="text-gray-600 dark:text-gray-400">Stay updated with our newest content</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-4xl font-semibold mb-2 sm:mb-4 text-black dark:text-white">Latest Updates</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Stay updated with our newest content</p>
           </div>
           
           <div className="relative">
@@ -133,9 +133,9 @@ function Home() {
       </section>
 
       {/* Sezioni Principali - Spotify Style */}
-      <section className="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800 cards-section">
+      <section className="py-12 sm:py-24 bg-gray-50 dark:bg-gray-800 cards-section">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-12">
             
             {/* Artists Card */}
             <Link to="/artists" className="group">
