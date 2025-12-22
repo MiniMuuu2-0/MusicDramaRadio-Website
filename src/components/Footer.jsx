@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 import { useState } from 'react'
 import ContactModal from './ContactModal'
 
@@ -35,7 +33,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <img src="/logo-threads.png" alt="Threads" className="w-5 h-5" />
+                  <img src="/MusicDramaRadio-Website/logo-threads.png" alt="Threads" className="w-5 h-5" />
                 </a>
               </div>
             </div>
