@@ -1,59 +1,214 @@
+import { Link } from 'react-router-dom'
+
 function About() {
   return (
-    <div className="pt-20 pb-32 bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h1 className="text-4xl sm:text-5xl font-semibold text-center mb-12 sm:mb-20 text-black dark:text-white tracking-tight">About</h1>
-        
-        <div className="prose prose-lg max-w-none">
-          <div className="text-center mb-16">
-            <div className="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-8"></div>
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-black dark:text-white">Music Drama Radio</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              La tua fonte di riferimento per il mondo K-pop e K-drama
-            </p>
-          </div>
+    <div className="bg-stone-50 dark:bg-gray-900">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 sm:pt-32 sm:pb-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <h1 className="text-4xl sm:text-6xl font-semibold text-black dark:text-white mb-6 sm:mb-8 tracking-tight leading-tight">
+            About Music Drama Radio
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
+            Your ultimate destination for K-pop, T-pop, K-drama content and Korean culture insights.
+          </p>
+        </div>
+      </section>
 
-          <div className="space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed">
-            <p className="text-lg">
-              Benvenuti su Music Drama Radio, il punto di incontro per tutti gli appassionati di cultura coreana. 
-              Qui troverete interviste esclusive con i vostri artisti preferiti, approfondimenti sui K-drama più seguiti 
-              e le ultime novità dal mondo del K-pop.
-            </p>
-            
-            <p>
-              La nostra missione è quella di avvicinare il pubblico italiano alla ricchezza culturale della Corea del Sud, 
-              attraverso contenuti di qualità e interviste autentiche che raccontano le storie dietro la musica e i drama 
-              che tanto amiamo.
-            </p>
-
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 my-12">
-              <h3 className="text-xl font-semibold mb-4 text-black dark:text-white">Cosa troverai qui</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-blue-600 dark:text-blue-400 mr-3">•</span>
-                  Interviste esclusive con artisti K-pop e attori di K-drama
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 dark:text-blue-400 mr-3">•</span>
-                  Approfondimenti e recensioni sui drama più popolari
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 dark:text-blue-400 mr-3">•</span>
-                  News e aggiornamenti dal mondo dell'entertainment coreano
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 dark:text-blue-400 mr-3">•</span>
-                  Contenuti originali e dietro le quinte
-                </li>
-              </ul>
+      {/* Story Section */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-black dark:text-white">
+                Our Story
+              </h2>
+              <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p>
+                  Music Drama è un programma radiofonico e un progetto ideato da Cinzia Alberti nel febbraio 2022.
+                  Va in onda su Radio Panda 96.3 e su MixCloud.
+                </p>
+                <p>
+                  Il nostro percorso è dedicato alla cultura coreana e thailandese, con particolare attenzione a tradizioni, 
+                  abitudini, stili di vita e alle più recenti produzioni musicali e cinematografiche.
+                </p>
+                <p>
+                  Il progetto si sviluppa grazie al lavoro di un team di persone con competenze diverse.
+                </p>
+                <p className="text-sm italic text-gray-600 dark:text-gray-400">
+                  *Music Drama non ha scopo di lucro e attualmente non ha scopo commerciale.
+                </p>
+              </div>
             </div>
-
-            <p>
-              Seguici per rimanere sempre aggiornato sulle ultime novità e non perdere nessuna delle nostre interviste esclusive!
-            </p>
+            <div className="relative">
+              <div className="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-2xl p-8 sm:p-12">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-black dark:text-white">Our Mission</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Portare la cultura coreana e thailandese al pubblico italiano attraverso contenuti 
+                    autentici che celebrano tradizioni, musica e cinematografia di questi paesi.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-black dark:text-white">
+              What We Stand For
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Our core values guide everything we do at Music Drama Radio
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">Authenticity</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                We provide genuine, unbiased content that respects the artistry and culture behind Korean entertainment.
+              </p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">Community</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Building a global community of fans who share the same passion for Korean culture and entertainment.
+              </p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">Innovation</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Constantly evolving our content and approach to bring you fresh perspectives on Korean entertainment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-black dark:text-white">
+              Il Nostro Team
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Un gruppo di 7 collaboratori appassionati di cultura asiatica
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            {/* Cinzia Alberti */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/CinziaAlberti.jpg" 
+                    alt="Cinzia Alberti" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Cinzia Alberti</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Founder & Host</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Tecnico dei Servizi Sociali, scopre i K-Drama nel 2016. Fondatrice di Music Drama su Radio Panda 96.3 e VisiOnAir Radio.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Anna Cozzolino */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform -rotate-1 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
+                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
+                  <img 
+                    src="/MusicDramaRadio-Website/AnnaCozzolino.jpg" 
+                    alt="Anna Cozzolino" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Anna Cozzolino</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Content Creator</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
+                    Studentessa in Scienze della Formazione con passione per la musica thai. Interprete e traduttrice per Music Drama.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Placeholder per altri collaboratori */}
+            <div className="group cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl">
+                <div className="w-48 h-56 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-lg mb-3 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">+5</span>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Altri Collaboratori</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Team Members</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-black dark:text-white">
+            Join Our Journey
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+            Discover exclusive interviews, read our latest articles, and become part of our growing community.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              to="/interviews" 
+              className="inline-block bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Explore Interviews
+            </Link>
+            <Link 
+              to="/blog" 
+              className="inline-block border-2 border-black dark:border-white text-black dark:text-white px-8 py-4 rounded-full font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Read Our Blog
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
