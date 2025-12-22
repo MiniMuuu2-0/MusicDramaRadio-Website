@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -10,10 +11,18 @@ import About from './pages/About'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 
+function ScrollToTop() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
+  return null
+}
+
 function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-stone-50 dark:bg-gray-900 transition-colors duration-300 flex flex-col">
           <Navbar />
           <main className="flex-1">

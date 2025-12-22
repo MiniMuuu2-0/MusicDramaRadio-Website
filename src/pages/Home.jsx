@@ -59,48 +59,75 @@ function Home() {
       {/* Latest Updates */}
       <section className="py-16 sm:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-12 text-black dark:text-white">Latest Updates</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-black dark:text-white">Latest Updates</h2>
+            <p className="text-gray-600 dark:text-gray-400">Stay updated with our newest content</p>
+          </div>
+          
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500 via-blue-500 to-pink-500 hidden md:block"></div>
             
-            <div className="group cursor-pointer">
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-purple-500 rounded-xl mb-4 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
+            <div className="space-y-12">
+              
+              {/* Update 1 */}
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-3">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <span className="text-sm text-purple-600 dark:text-purple-400 font-medium">2 days ago</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">Exclusive NewJeans Interview</h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">Deep dive into their creative process and upcoming projects with the rising K-pop sensation.</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">New K-pop Interview</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">2 days ago</p>
-                <p className="text-gray-700 dark:text-gray-300">Exclusive interview with rising K-pop stars about their latest album.</p>
+                <div className="hidden md:block w-4 h-4 bg-purple-500 rounded-full border-4 border-white dark:border-gray-900 relative z-10"></div>
+                <div className="md:w-1/2 md:pl-8"></div>
               </div>
-            </div>
 
-            <div className="group cursor-pointer">
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-blue-500 rounded-xl mb-4 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                  </svg>
+              {/* Update 2 */}
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-8"></div>
+                <div className="hidden md:block w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 relative z-10"></div>
+                <div className="md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                  <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-3">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">5 days ago</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">Business Proposal K-drama Review</h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">Complete analysis of the hit romantic comedy that took the world by storm.</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">K-drama Review</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">5 days ago</p>
-                <p className="text-gray-700 dark:text-gray-300">In-depth review of the latest trending K-drama series.</p>
               </div>
-            </div>
 
-            <div className="group cursor-pointer">
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="w-12 h-12 bg-red-500 rounded-xl mb-4 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                  </svg>
+              {/* Update 3 */}
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                  <div className="bg-gradient-to-r from-pink-50 to-red-50 dark:from-pink-900/20 dark:to-red-900/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-3">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
+                      <span className="text-sm text-pink-600 dark:text-pink-400 font-medium">1 week ago</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">Korean Culture Spotlight</h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">Exploring traditional Korean festivals and their influence on modern entertainment.</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">Culture Spotlight</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">1 week ago</p>
-                <p className="text-gray-700 dark:text-gray-300">Exploring Korean cultural traditions and their modern influence.</p>
+                <div className="hidden md:block w-4 h-4 bg-pink-500 rounded-full border-4 border-white dark:border-gray-900 relative z-10"></div>
+                <div className="md:w-1/2 md:pl-8"></div>
               </div>
-            </div>
 
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link to="/blog" className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium transition-colors duration-200">
+              View all updates
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
