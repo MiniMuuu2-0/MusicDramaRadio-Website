@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import TypewriterText from '../components/TypewriterText'
-import ScrollIndicator from '../components/ScrollIndicator'
 
 function Home() {
   const [cardsVisible, setCardsVisible] = useState(false)
@@ -47,7 +46,6 @@ function Home() {
             Discover Interviews
           </Link>
         </div>
-        <ScrollIndicator />
       </section>
 
       {/* Sezioni Principali - Spotify Style */}
