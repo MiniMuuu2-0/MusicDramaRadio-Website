@@ -40,7 +40,7 @@ function Home() {
           </h1>
           <div className="text-lg sm:text-xl lg:text-3xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-16 max-w-4xl mx-auto leading-relaxed font-light">
             <TypewriterText 
-              text="Your reference point for K-pop, T-pop, K-drama and Korean culture" 
+              text="Your reference point for K-pop, T-pop, Asian Series and Korean culture" 
               speed={30}
               delay={500}
             />
@@ -180,7 +180,7 @@ function Home() {
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-xl transition-all duration-300"></div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-semibold text-black dark:text-white mb-1 truncate">K-drama Blog</h3>
+                    <h3 className="text-lg font-semibold text-black dark:text-white mb-1 truncate">Asian Series Blog</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 truncate">Music Drama • Articles</p>
                   </div>
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
@@ -192,7 +192,7 @@ function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  Articles and insights about K-drama and K-pop world
+                  Articles and insights about Asian Series and K-pop world
                 </p>
               </div>
             </Link>

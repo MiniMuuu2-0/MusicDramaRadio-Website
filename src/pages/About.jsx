@@ -23,7 +23,7 @@ function About() {
             </div>
           </div>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
-            Your ultimate destination for K-pop, T-pop, K-drama content and Korean culture insights.
+            Your ultimate destination for K-pop, T-pop, Asian Series content and Korean culture insights.
           </p>
         </div>
       </section>
