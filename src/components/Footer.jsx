@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ContactModal from './ContactModal'
 
 function Footer() {
@@ -38,8 +39,8 @@ function Footer() {
               </div>
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Privacy</a>
-              <a href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Terms</a>
+              <Link to="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
+              <Link to="/terms" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Terms</Link>
               <button 
                 onClick={() => setIsContactOpen(true)}
                 className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
