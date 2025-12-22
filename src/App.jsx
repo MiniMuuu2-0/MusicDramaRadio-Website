@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Navbar from './components/Navbar'
@@ -12,9 +12,12 @@ import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 
 function ScrollToTop() {
+  const { pathname } = useLocation()
+  
   useEffect(() => {
     window.scrollTo(0, 0)
-  })
+  }, [pathname])
+  
   return null
 }
 
