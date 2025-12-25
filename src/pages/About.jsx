@@ -183,7 +183,7 @@ function About() {
               Our Team
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              A group of 7 collaborators passionate about Asian culture
+              A group of 2 collaborators passionate about Asian culture
             </p>
           </div>
           
@@ -223,114 +223,6 @@ function About() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Content Creator</p>
                   <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
                     University student in Educational Sciences with a passion for Thai music. Interpreter and translator for Music Drama.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="my-12 flex items-center justify-center">
-            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent w-full max-w-md"></div>
-          </div>
-
-          {/* Other Team Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12 justify-items-center">
-            {/* Saverio Lombardi */}
-            <div className="group cursor-pointer">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
-                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
-                  <img 
-                    src="/MusicDramaRadio-Website/SaverioLombardi.jpg" 
-                    alt="Saverio Lombardi" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Saverio Lombardi</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Speaker</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Traveling speaker since 1988, touring Italian radios. Always on point at any time of day or night.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* DJ Quarto */}
-            <div className="group cursor-pointer">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform -rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
-                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
-                  <img 
-                    src="/MusicDramaRadio-Website/DjQuarto.jpg" 
-                    alt="DJ Quarto" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">DJ Quarto</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Director & Speaker</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Director and radio speaker. Started in 2022, joined Music Drama in 2023. Director of La Buca del Rock.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Sofia Porta */}
-            <div className="group cursor-pointer">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
-                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
-                  <img 
-                    src="/MusicDramaRadio-Website/SofiaPorta .jpg" 
-                    alt="Sofia Porta" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Sofia Porta</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Actress & Voice Actor</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Actress, voice actor and speaker. Worked on Music Drama for the entire second season (Oct 2023 - Jun 2024).
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Isabella Deborah Bonomo */}
-            <div className="group cursor-pointer">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform -rotate-1 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
-                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
-                  <img 
-                    src="/MusicDramaRadio-Website/IsabellaDeborahBonomo .jpg" 
-                    alt="Isabella Deborah Bonomo" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Isabella D. Bonomo</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Translator & Editor</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Also known as Yishan B. Translator, video editor and maker for Music Drama in the Tilly Birds project.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Angelina Faggion */}
-            <div className="group cursor-pointer">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transform rotate-2 group-hover:rotate-0 transition-all duration-300 hover:shadow-xl max-w-xs">
-                <div className="w-48 h-56 bg-gray-100 dark:bg-gray-700 rounded-lg mb-3 overflow-hidden">
-                  <img 
-                    src="/MusicDramaRadio-Website/AngelinaFaggion.jpg" 
-                    alt="Angelina Faggion" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="font-handwriting text-lg font-medium text-black dark:text-white mb-1">Angelina Faggion</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Collaborator</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 leading-tight">
-                    Passionate about Oriental culture. Discovered K-Drama and K-pop, traveled to Seoul in 2019. Collaborated until June 2024.
                   </p>
                 </div>
               </div>
