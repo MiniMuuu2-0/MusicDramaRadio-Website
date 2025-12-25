@@ -1,15 +1,19 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { useTheme } from '../hooks/useTheme'
+import { useLanguage } from '../hooks/useLanguage'
 import { useSearch } from '../hooks/useSearch'
+import { translations } from '../utils/translations'
 
 function Navbar() {
   const location = useLocation()
   const { isDark, toggleTheme } = useTheme()
+  const { language, toggleLanguage } = useLanguage()
   const [searchQuery, setSearchQuery] = useState('')
   const [showResults, setShowResults] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const searchResults = useSearch(searchQuery)
+  const t = translations[language]
   
   const isActive = (path) => location.pathname === path
   
@@ -74,7 +78,7 @@ function Navbar() {
             <div className="relative">
               <input 
                 type="text" 
-                placeholder="Cerca..."
+                placeholder={t.search}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setShowResults(true)}
@@ -101,6 +105,15 @@ function Navbar() {
               )}
             </div>
             <button 
+              onClick={toggleLanguage}
+              className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center space-x-1"
+            >
+              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </button>
+            <button 
               onClick={toggleTheme}
               className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             >
@@ -118,6 +131,12 @@ function Navbar() {
           
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
+            <button 
+              onClick={toggleLanguage}
+              className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center"
+            >
+              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+            </button>
             <button 
               onClick={toggleTheme}
               className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
@@ -149,7 +168,7 @@ function Navbar() {
             <div className="space-y-4">
               <input 
                 type="text" 
-                placeholder="Cerca..."
+                placeholder={t.search}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-2 text-sm bg-gray-100 dark:bg-gray-800 border-0 rounded-full focus:outline-none focus:bg-white dark:focus:bg-gray-700 focus:shadow-sm transition-all duration-200 placeholder-gray-500 dark:placeholder-gray-400 text-black dark:text-white"
