@@ -2,6 +2,9 @@ export const translations = {
   it: {
     // Navbar
     search: "Cerca...",
+    siteName: "Music Drama Radio",
+    homeTitle: "Music Drama Radio - Home",
+    homeDescription: "Scopri interviste esclusive, articoli e approfondimenti su K-pop, T-pop, serie asiatiche e cultura asiatica.",
     
     // Home
     heroText: "Il tuo punto di riferimento per K-pop, T-pop, Serie Asiatiche e cultura asiatica",
@@ -10,15 +13,21 @@ export const translations = {
     latestUpdates: "Ultimi Aggiornamenti",
     stayUpdated: "Rimani aggiornato con i nostri contenuti più recenti",
     viewAllUpdates: "Vedi tutti gli aggiornamenti",
-    kpopArtists: "Artisti K-pop",
-    musicDramaPlaylist: "Music Drama • Playlist",
-    discoverArtists: "Scopri i tuoi artisti K-pop preferiti e le loro storie",
-    asianSeriesBlog: "Blog Serie Asiatiche",
-    musicDramaArticles: "Music Drama • Articoli",
-    articlesInsights: "Articoli e approfondimenti sul mondo delle Serie Asiatiche e K-pop",
-    exclusiveInterviews: "Interviste Esclusive",
-    musicDramaPodcast: "Music Drama • Podcast",
-    exclusiveInterviewsDesc: "Interviste esclusive con artisti e personalità del settore",
+    update_newjeans_title: "Intervista esclusiva alle NewJeans",
+    update_newjeans_desc: "Un viaggio nella loro creatività e nei progetti in arrivo con il gruppo rivelazione del K-pop.",
+    update_business_proposal_title: "Business Proposal: recensione K-drama",
+    update_business_proposal_desc: "Analisi completa della rom-com che ha conquistato il pubblico internazionale.",
+    update_korean_culture_title: "Spotlight sulla cultura coreana",
+    update_korean_culture_desc: "Festival tradizionali e il loro impatto sull'intrattenimento contemporaneo.",
+    card_artists_title: "Artisti K-pop",
+    card_artists_subtitle: "Music Drama • Playlist",
+    card_artists_desc: "Scopri i tuoi artisti K-pop preferiti e le loro storie",
+    card_blog_title: "Blog Serie Asiatiche",
+    card_blog_subtitle: "Music Drama • Articoli",
+    card_blog_desc: "Articoli e approfondimenti sul mondo delle Serie Asiatiche e K-pop",
+    card_interviews_title: "Interviste Esclusive",
+    card_interviews_subtitle: "Music Drama • Podcast",
+    card_interviews_desc: "Interviste esclusive con artisti e personalità del settore",
     
     // About
     aboutTitle: "Chi Siamo - Music Drama Radio",
@@ -62,6 +71,9 @@ export const translations = {
   en: {
     // Navbar
     search: "Search...",
+    siteName: "Music Drama Radio",
+    homeTitle: "Music Drama Radio - Home",
+    homeDescription: "Discover exclusive interviews, articles, and insights on K-pop, T-pop, Asian series, and Asian culture.",
     
     // Home
     heroText: "Your reference point for K-pop, T-pop, Asian Series and Asian culture",
@@ -70,15 +82,21 @@ export const translations = {
     latestUpdates: "Latest Updates",
     stayUpdated: "Stay updated with our newest content",
     viewAllUpdates: "View all updates",
-    kpopArtists: "K-pop Artists",
-    musicDramaPlaylist: "Music Drama • Playlist",
-    discoverArtists: "Discover your favorite K-pop artists and their stories",
-    asianSeriesBlog: "Asian Series Blog",
-    musicDramaArticles: "Music Drama • Articles",
-    articlesInsights: "Articles and insights about Asian Series and K-pop world",
-    exclusiveInterviews: "Exclusive Interviews",
-    musicDramaPodcast: "Music Drama • Podcast",
-    exclusiveInterviewsDesc: "Exclusive interviews with artists and industry personalities",
+    update_newjeans_title: "Exclusive NewJeans interview",
+    update_newjeans_desc: "A deep dive into their creative process and upcoming projects with the rising K-pop sensation.",
+    update_business_proposal_title: "Business Proposal K-drama review",
+    update_business_proposal_desc: "A complete analysis of the romantic comedy that took the world by storm.",
+    update_korean_culture_title: "Korean culture spotlight",
+    update_korean_culture_desc: "Exploring traditional festivals and their influence on modern entertainment.",
+    card_artists_title: "K-pop Artists",
+    card_artists_subtitle: "Music Drama • Playlist",
+    card_artists_desc: "Discover your favorite K-pop artists and their stories",
+    card_blog_title: "Asian Series Blog",
+    card_blog_subtitle: "Music Drama • Articles",
+    card_blog_desc: "Articles and insights about Asian Series and K-pop world",
+    card_interviews_title: "Exclusive Interviews",
+    card_interviews_subtitle: "Music Drama • Podcast",
+    card_interviews_desc: "Exclusive interviews with artists and industry personalities",
     
     // About
     aboutTitle: "About Music Drama Radio",
