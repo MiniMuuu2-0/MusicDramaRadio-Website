@@ -26,6 +26,32 @@ export const homeLandingContent = {
           'Il progetto nasce in radio e porta online conversazioni, rubriche e contenuti pensati per una community curiosa e appassionata.'
       }
     ],
+    statusEyebrow: 'Stato Del Progetto',
+    statusTitle: 'Un archivio in crescita, costruito contenuto dopo contenuto',
+    statusDescription:
+      'Il sito sta prendendo forma con un’impostazione editoriale chiara: profili da sfogliare, interviste da ascoltare e leggere, articoli pronti a entrare appena arrivano i materiali definitivi.',
+    statusCards: [
+      {
+        key: 'artists',
+        label: 'Parliamo di...'
+      },
+      {
+        key: 'interviews',
+        label: 'Interviste'
+      },
+      {
+        key: 'blog',
+        label: 'Blog'
+      }
+    ],
+    runwayTitle: 'Cosa stiamo preparando ora',
+    runwayDescription:
+      'Mentre i nuovi materiali vengono finalizzati, il sito viene ottimizzato per ospitare in modo coerente artisti, interviste, gallery editoriali e futuri articoli lunghi.',
+    runwayItems: [
+      'Nuove interviste pronte a entrare con audio, trascrizione e gallery.',
+      'Nuovi artisti da pubblicare nella sezione Parliamo di....',
+      'Template blog già pronti per i primi articoli editoriali reali.'
+    ],
     faqEyebrow: 'Domande Frequenti',
     faqTitle: 'Cosa trova una persona su Music Drama Radio?',
     faqDescription:
@@ -79,6 +105,32 @@ export const homeLandingContent = {
         description:
           'The project started on radio and continues online with interviews, editorial columns and content built for an engaged community.'
       }
+    ],
+    statusEyebrow: 'Project Status',
+    statusTitle: 'A growing archive, built piece by piece',
+    statusDescription:
+      'The site is taking shape with a clear editorial structure: profiles to browse, interviews to listen to and read, and article pages ready as soon as the final material arrives.',
+    statusCards: [
+      {
+        key: 'artists',
+        label: "Let's Talk About..."
+      },
+      {
+        key: 'interviews',
+        label: 'Interviews'
+      },
+      {
+        key: 'blog',
+        label: 'Blog'
+      }
+    ],
+    runwayTitle: 'What we are preparing now',
+    runwayDescription:
+      'While new materials are being finalized, the site is being refined to host artists, interviews, editorial galleries and future long-form articles in a consistent way.',
+    runwayItems: [
+      'New interviews ready to be published with audio, transcript and gallery.',
+      'New artists ready to enter the Let’s Talk About... section.',
+      'Blog templates already prepared for the first real editorial articles.'
     ],
     faqEyebrow: 'FAQ',
     faqTitle: 'What can someone find on Music Drama Radio?',

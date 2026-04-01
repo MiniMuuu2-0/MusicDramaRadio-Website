@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import { ThemeProvider } from './contexts/ThemeContext'
-import { LanguageProvider } from './contexts/LanguageContext'
+import { ThemeProvider } from './contexts/ThemeContext.jsx'
+import { LanguageProvider } from './contexts/LanguageContext.jsx'
 import CookieConsentBanner from './components/CookieConsentBanner'
 import LanguageSelectionModal from './components/LanguageSelectionModal'
 import Navbar from './components/Navbar'
@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Artists from './pages/Artists'
 import ArtistDetail from './pages/ArtistDetail'
 import Blog from './pages/Blog'
+import BlogDetail from './pages/BlogDetail'
 import Interviews from './pages/Interviews'
 import InterviewDetail from './pages/InterviewDetail'
 import About from './pages/About'
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/artists" element={<Artists />} />
                 <Route path="/artists/:slug" element={<ArtistDetail />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogDetail />} />
                 <Route path="/interviews" element={<Interviews />} />
                 <Route path="/interviews/:slug" element={<InterviewDetail />} />
                 <Route path="/about" element={<About />} />

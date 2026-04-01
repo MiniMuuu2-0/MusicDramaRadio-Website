@@ -55,6 +55,11 @@ function ArtistDetail() {
               <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-600 dark:text-gray-300">
                 {artist.description[language]}
               </p>
+              {artist.tagline?.[language] && (
+                <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  {artist.tagline[language]}
+                </p>
+              )}
             </div>
 
             <div className="flex gap-2 sm:flex-col sm:items-end">
@@ -66,6 +71,22 @@ function ArtistDetail() {
                   {highlight}
                 </span>
               ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-[2rem] border border-gray-200 bg-white px-6 py-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:px-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400">
+                {language === 'it' ? 'Feed visivo' : 'Visual feed'}
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold text-black dark:text-white">
+                {language === 'it' ? 'Scorri il materiale editoriale dedicato' : 'Scroll through the dedicated editorial material'}
+              </h2>
+            </div>
+            <div className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+              {gallery.length} {language === 'it' ? 'slide' : 'slides'}
             </div>
           </div>
         </div>

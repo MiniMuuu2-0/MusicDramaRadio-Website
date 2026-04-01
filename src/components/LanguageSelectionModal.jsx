@@ -22,9 +22,9 @@ function LanguageSelectionModal() {
   }
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/75 backdrop-blur-sm px-4">
+    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/75 px-4 py-6 backdrop-blur-sm">
       <div
-        className="w-full max-w-xl rounded-[2rem] border border-white/10 bg-white p-6 shadow-2xl shadow-black/30 sm:p-8"
+        className="max-h-[calc(100vh-3rem)] w-full max-w-xl overflow-y-auto rounded-[2rem] border border-white/10 bg-white p-5 shadow-2xl shadow-black/30 sm:p-8"
         role="dialog"
         aria-modal="true"
         aria-labelledby="language-selection-title"
@@ -34,7 +34,7 @@ function LanguageSelectionModal() {
         </p>
         <h2
           id="language-selection-title"
-          className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl"
+          className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 sm:text-4xl"
         >
           Welcome to Music Drama Radio
         </h2>
@@ -47,18 +47,18 @@ function LanguageSelectionModal() {
           <button
             type="button"
             onClick={() => selectLanguage('it')}
-            className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-6 py-6 text-left transition-all hover:-translate-y-0.5 hover:border-slate-900 hover:bg-white hover:shadow-lg"
+            className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-5 py-5 text-left transition-all hover:-translate-y-0.5 hover:border-slate-900 hover:bg-white hover:shadow-lg sm:px-6 sm:py-6"
           >
-            <span className="block text-2xl font-semibold text-slate-950">Italiano</span>
+            <span className="block text-xl font-semibold text-slate-950 sm:text-2xl">Italiano</span>
             <span className="mt-2 block text-sm text-slate-600">Continue in Italian.</span>
           </button>
 
           <button
             type="button"
             onClick={() => selectLanguage('en')}
-            className="rounded-[1.5rem] border border-slate-900 bg-slate-950 px-6 py-6 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/20"
+            className="rounded-[1.5rem] border border-slate-900 bg-slate-950 px-5 py-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/20 sm:px-6 sm:py-6"
           >
-            <span className="block text-2xl font-semibold text-white">English</span>
+            <span className="block text-xl font-semibold text-white sm:text-2xl">English</span>
             <span className="mt-2 block text-sm text-slate-300">Continue in English.</span>
           </button>
         </div>

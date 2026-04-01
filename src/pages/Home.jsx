@@ -5,6 +5,7 @@ import { useLanguage } from '../hooks/useLanguage'
 import { useSeo } from '../hooks/useSeo'
 import { translations } from '../utils/translations'
 import { homeCards } from '../data/homeContent'
+import { artists } from '../data/artists'
 import { blogPosts } from '../data/blogPosts'
 import { interviews } from '../data/interviews'
 import { homeLandingContent } from '../content/homeLandingContent'
@@ -55,7 +56,7 @@ function Home() {
       title: post.title[language],
       description: post.excerpt[language],
       date: post.date,
-      path: '/blog'
+      path: `/blog/${post.slug}`
     }))
 
     const interviewItems = interviews.map((interview) => ({
@@ -64,11 +65,20 @@ function Home() {
       title: interview.title[language],
       description: interview.description[language],
       date: interview.date,
-      path: '/interviews'
+      path: `/interviews/${interview.slug}`
     }))
 
     return [...blogItems, ...interviewItems].sort((a, b) => new Date(b.date) - new Date(a.date))
   }, [language])
+
+  const statusCounts = useMemo(
+    () => ({
+      artists: artists.length,
+      interviews: interviews.length,
+      blog: blogPosts.length
+    }),
+    []
+  )
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -204,6 +214,66 @@ function Home() {
                 </p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-stone-100 dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-gray-400">
+                {landingContent.statusEyebrow}
+              </p>
+              <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-black dark:text-white">
+                {landingContent.statusTitle}
+              </h2>
+              <p className="mt-5 max-w-2xl text-base sm:text-lg leading-8 text-gray-600 dark:text-gray-300">
+                {landingContent.statusDescription}
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {landingContent.statusCards.map((card) => (
+                <article
+                  key={card.key}
+                  className="rounded-[1.75rem] border border-gray-200 bg-white px-5 py-6 shadow-sm dark:border-gray-800 dark:bg-gray-900"
+                >
+                  <p className="text-sm font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
+                    {card.label}
+                  </p>
+                  <p className="mt-4 text-4xl font-semibold tracking-tight text-black dark:text-white">
+                    {statusCounts[card.key]}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                    {card.key === 'blog'
+                      ? language === 'it'
+                        ? 'Struttura pronta per i primi articoli veri.'
+                        : 'Structure ready for the first real articles.'
+                      : language === 'it'
+                        ? 'Contenuti gia online e pronti a crescere.'
+                        : 'Content already online and ready to grow.'}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10 rounded-[2rem] border border-gray-200 bg-white px-6 py-7 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:px-8">
+            <h3 className="text-2xl font-semibold text-black dark:text-white">{landingContent.runwayTitle}</h3>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-gray-600 dark:text-gray-300">
+              {landingContent.runwayDescription}
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {landingContent.runwayItems.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-[1.5rem] bg-stone-50 px-5 py-5 text-sm leading-7 text-gray-700 dark:bg-gray-950 dark:text-gray-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

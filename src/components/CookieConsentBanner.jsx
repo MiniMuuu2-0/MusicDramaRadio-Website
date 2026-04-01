@@ -18,7 +18,7 @@ function CookieConsentBanner() {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[70] px-4 pb-4">
+    <div className="fixed inset-x-0 bottom-0 z-[70] px-3 pb-3 sm:px-4 sm:pb-4">
       <div className="mx-auto max-w-5xl rounded-[1.75rem] border border-slate-200/90 bg-white/95 p-5 shadow-2xl shadow-slate-900/15 backdrop-blur sm:p-6 dark:border-gray-700 dark:bg-gray-900/95">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
@@ -36,12 +36,12 @@ function CookieConsentBanner() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
             {cookieConsent !== null && (
               <button
                 type="button"
                 onClick={closeCookiePreferences}
-                className="rounded-full border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900 dark:border-gray-600 dark:text-gray-200 dark:hover:border-white dark:hover:text-white"
+                className="w-full rounded-full border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900 sm:w-auto dark:border-gray-600 dark:text-gray-200 dark:hover:border-white dark:hover:text-white"
               >
                 {t.cookieClose}
               </button>
@@ -49,14 +49,14 @@ function CookieConsentBanner() {
             <button
               type="button"
               onClick={() => updateCookieConsent('essential')}
-              className="rounded-full border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900 dark:border-gray-600 dark:text-gray-200 dark:hover:border-white dark:hover:text-white"
+              className="w-full rounded-full border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-slate-900 hover:text-slate-900 sm:w-auto dark:border-gray-600 dark:text-gray-200 dark:hover:border-white dark:hover:text-white"
             >
               {t.cookieEssentialOnly}
             </button>
             <button
               type="button"
               onClick={() => updateCookieConsent('preferences')}
-              className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-gray-200"
+              className="w-full rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800 sm:w-auto dark:bg-white dark:text-slate-950 dark:hover:bg-gray-200"
             >
               {t.cookieAcceptPreferences}
             </button>

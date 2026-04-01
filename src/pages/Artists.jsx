@@ -65,11 +65,18 @@ function Artists() {
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-dashed border-gray-300 bg-gray-50 px-8 py-16 text-center dark:border-gray-700 dark:bg-gray-800/60">
-            <h2 className="text-2xl font-semibold text-black dark:text-white">{t.artistsEmptyTitle}</h2>
+          <div className="rounded-[2rem] border border-dashed border-gray-300 bg-gradient-to-br from-fuchsia-50 to-white px-8 py-16 text-center dark:border-gray-700 dark:from-gray-800/80 dark:to-gray-900">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-fuchsia-700 dark:text-fuchsia-400">Editorial Profiles</p>
+            <h2 className="mt-4 text-3xl font-semibold text-black dark:text-white">{t.artistsEmptyTitle}</h2>
             <p className="mx-auto mt-4 max-w-2xl leading-7 text-gray-600 dark:text-gray-300">
               {t.artistsEmptyDescription}
             </p>
+            <Link
+              to="/"
+              className="mt-8 inline-flex items-center rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+            >
+              {t.artistsEmptyCta}
+            </Link>
           </div>
         )}
       </div>

@@ -22,7 +22,7 @@ function LanguageSwitcher({ language, onChange, label }) {
             key={option}
             type="button"
             onClick={() => onChange(option)}
-            className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
+            className={`rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors sm:px-3 sm:text-xs ${
               isActive
                 ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
                 : 'text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white'
@@ -53,7 +53,7 @@ function Navbar() {
     <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="flex justify-between items-center h-14">
-          <Link to="/" className="text-lg font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+          <Link to="/" className="max-w-[10.5rem] truncate text-base font-medium text-black transition-colors hover:text-gray-600 sm:max-w-none sm:text-lg dark:text-white dark:hover:text-gray-300">
             {t.siteName}
           </Link>
 
@@ -84,13 +84,13 @@ function Navbar() {
             <Link
               to="/blog"
               className={`text-sm transition-all duration-200 relative ${
-                isActive('/blog')
+                isActive('/blog', true)
                   ? 'text-black dark:text-white font-medium'
                   : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
             >
               {t.blogTitle}
-              {isActive('/blog') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
+              {isActive('/blog', true) && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
             <Link
               to="/interviews"
@@ -159,7 +159,7 @@ function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-1.5">
             <LanguageSwitcher
               language={language}
               onChange={selectLanguage}
@@ -168,7 +168,7 @@ function Navbar() {
             <button
               onClick={toggleTheme}
               aria-label={isDark ? t.themeToggleLight : t.themeToggleDark}
-              className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              className="p-1.5 text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
             >
               {isDark ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@ function Navbar() {
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              className="p-1.5 text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
@@ -193,7 +193,7 @@ function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl p-4 z-50">
+          <div className="md:hidden absolute top-full left-3 right-3 z-50 mt-2 max-h-[calc(100vh-5rem)] overflow-y-auto rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-xl backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95">
             <div className="space-y-4">
               <input
                 type="text"
@@ -229,7 +229,7 @@ function Navbar() {
                   to="/blog"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-2 text-base ${
-                    isActive('/blog')
+                    isActive('/blog', true)
                       ? 'text-black dark:text-white font-medium'
                       : 'text-gray-600 dark:text-gray-400'
                   }`}

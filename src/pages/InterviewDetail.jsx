@@ -13,6 +13,7 @@ function InterviewDetail() {
   const interview = getInterviewBySlug(slug)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
+  const [isTranscriptExpanded, setIsTranscriptExpanded] = useState(false)
   const dateFormatter = useMemo(() => {
     return new Intl.DateTimeFormat(language === 'it' ? 'it-IT' : 'en-US', {
       day: '2-digit',
@@ -93,11 +94,15 @@ function InterviewDetail() {
                   controls
                   preload="metadata"
                   src={interview.audio}
-                  onPlay={() => setIsAudioPlaying(true)}
+                  onPlay={() => {
+                    setIsAudioPlaying(true)
+                    setIsTranscriptExpanded(false)
+                  }}
                   onPause={() => setIsAudioPlaying(false)}
                   onEnded={() => {
                     setIsAudioPlaying(false)
                     setCurrentTime(0)
+                    setIsTranscriptExpanded(false)
                   }}
                   onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
                   onSeeked={(event) => setCurrentTime(event.currentTarget.currentTime)}
@@ -176,17 +181,30 @@ function InterviewDetail() {
       </div>
 
       {showItalianTranscript && (
-        <aside className="fixed bottom-4 right-4 z-40 max-h-[70vh] w-[calc(100vw-2rem)] overflow-hidden rounded-[1.75rem] border border-gray-200 bg-white shadow-2xl dark:border-gray-800 dark:bg-gray-900 sm:w-[28rem]">
-          <div className="border-b border-gray-200 px-5 py-4 dark:border-gray-800">
-            <p className="text-sm font-semibold text-black dark:text-white">{t.interviewsTranscriptOriginal}</p>
-            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-              {language === 'it' ? 'Il testo compare mentre l’audio è in riproduzione.' : 'This panel appears while the audio is playing.'}
-            </p>
+        <aside className="fixed bottom-3 left-3 right-3 z-40 overflow-hidden rounded-[1.5rem] border border-gray-200 bg-white shadow-2xl dark:border-gray-800 dark:bg-gray-900 sm:bottom-4 sm:left-auto sm:right-4 sm:max-h-[70vh] sm:w-[28rem]">
+          <div className="border-b border-gray-200 px-4 py-4 dark:border-gray-800 sm:px-5">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-black dark:text-white">{t.interviewsTranscriptOriginal}</p>
+                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  {language === 'it' ? 'Il testo compare mentre l’audio è in riproduzione.' : 'This panel appears while the audio is playing.'}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsTranscriptExpanded((currentValue) => !currentValue)}
+                className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 transition-colors hover:text-black dark:bg-gray-800 dark:text-gray-300 dark:hover:text-white sm:hidden"
+              >
+                {isTranscriptExpanded ? t.interviewsTranscriptHide : t.interviewsTranscriptShow}
+              </button>
+            </div>
           </div>
-          <div className="max-h-[calc(70vh-4.5rem)] space-y-4 overflow-y-auto px-4 py-4">
+          <div className="max-h-[22vh] overflow-y-auto px-4 py-4 sm:max-h-[calc(70vh-4.5rem)] sm:px-4">
             <article className="rounded-[1.25rem] bg-stone-50 p-4 dark:bg-gray-950">
               <p className="text-sm font-semibold leading-6 text-black dark:text-white">{activeItalianEntry.question}</p>
-              <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">{activeItalianEntry.answer}</p>
+              <div className={`${isTranscriptExpanded ? 'block' : 'hidden'} mt-3 sm:block`}>
+                <p className="text-sm leading-7 text-gray-600 dark:text-gray-300">{activeItalianEntry.answer}</p>
+              </div>
             </article>
           </div>
         </aside>

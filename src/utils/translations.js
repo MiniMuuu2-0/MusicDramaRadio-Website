@@ -116,6 +116,7 @@ export const translations = {
     artistsEmptyTitle: 'La sezione Parliamo di... e pronta per i contenuti reali',
     artistsEmptyDescription:
       'La sezione e pronta a ospitare artisti, schede e immagini definitive.',
+    artistsEmptyCta: 'Torna alla home',
 
     blogTitle: 'Blog',
     blogDescription:
@@ -127,6 +128,7 @@ export const translations = {
     blogEmptyTitle: 'Il blog e pronto per gli articoli reali',
     blogEmptyDescription:
       'Il blog e pronto per ospitare titoli, date e testi definitivi.',
+    blogEmptyCta: 'Scopri le interviste',
 
     interviewsDescription:
       'Conversazioni, backstage e racconti direttamente dal settore tra K-pop, K-drama, radio e cultura asiatica.',
@@ -144,9 +146,12 @@ export const translations = {
     interviewsTranscriptEnglish: 'Versione inglese',
     interviewsTranscriptNote: 'Trascrizione rielaborata per la lettura a partire dall’audio originale.',
     interviewsThanks: 'Ringraziamenti',
+    interviewsTranscriptShow: 'Mostra testo',
+    interviewsTranscriptHide: 'Nascondi',
     interviewsEmptyTitle: 'La sezione interviste e pronta per il materiale definitivo',
     interviewsEmptyDescription:
       'La sezione e pronta a ospitare nomi, date, durate e descrizioni definitive.',
+    interviewsEmptyCta: 'Esplora Parliamo di...',
 
     contactTitle: 'Contattaci',
     contactName: 'Il tuo nome',
@@ -276,6 +281,7 @@ export const translations = {
     artistsEmptyTitle: `The "Let's Talk About..." section is ready for real content`,
     artistsEmptyDescription:
       'This section is ready for final artists, profiles and images.',
+    artistsEmptyCta: 'Back to home',
 
     blogTitle: 'Blog',
     blogDescription:
@@ -287,6 +293,7 @@ export const translations = {
     blogEmptyTitle: 'The blog is ready for real articles',
     blogEmptyDescription:
       'The blog is ready for final titles, dates and article texts.',
+    blogEmptyCta: 'Explore interviews',
 
     interviewsDescription:
       'Conversations, backstage stories and direct insight from K-pop, K-drama, radio and Asian culture.',
@@ -304,9 +311,12 @@ export const translations = {
     interviewsTranscriptEnglish: 'English version',
     interviewsTranscriptNote: 'Edited reading transcript prepared from the original audio recording.',
     interviewsThanks: 'Acknowledgements',
+    interviewsTranscriptShow: 'Show text',
+    interviewsTranscriptHide: 'Hide',
     interviewsEmptyTitle: 'The interviews section is ready for final material',
     interviewsEmptyDescription:
       'This section is ready for final names, dates, durations and interview descriptions.',
+    interviewsEmptyCta: "Explore Let's Talk About...",
 
     contactTitle: 'Contact Us',
     contactName: 'Your name',

@@ -22,7 +22,7 @@ export function useSearch(query, language) {
       ...blogPosts.map((post) => ({
         typeKey: 'searchTypeBlog',
         name: post.title[language],
-        path: '/blog',
+        path: `/blog/${post.slug}`,
         description: post.excerpt[language]
       })),
       ...interviews.map((interview) => ({

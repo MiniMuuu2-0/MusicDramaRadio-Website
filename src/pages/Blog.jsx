@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useMemo } from 'react'
 import { useLanguage } from '../hooks/useLanguage'
 import { useSeo } from '../hooks/useSeo'
@@ -39,24 +40,37 @@ function Blog() {
         {blogPosts.length > 0 ? (
           <div className="space-y-12">
             {blogPosts.map((post) => (
-              <article key={post.id} className="group cursor-pointer border-b border-gray-100 dark:border-gray-800 pb-12 last:border-b-0">
-                <h2 className="text-3xl font-semibold mb-4 text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {post.title[language]}
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">{formatDate(post.date)}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">{post.excerpt[language]}</p>
-                <span className="text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
-                  {t.blogReadMore} →
-                </span>
-              </article>
+              <Link
+                key={post.id}
+                to={`/blog/${post.slug}`}
+                className="group block border-b border-gray-100 pb-12 last:border-b-0 dark:border-gray-800"
+              >
+                <article>
+                  <h2 className="mb-4 text-3xl font-semibold text-black transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+                    {post.title[language]}
+                  </h2>
+                  <p className="mb-6 text-sm text-gray-500 dark:text-gray-400">{formatDate(post.date)}</p>
+                  <p className="mb-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">{post.excerpt[language]}</p>
+                  <span className="font-medium text-blue-600 transition-colors group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300">
+                    {t.blogReadMore} →
+                  </span>
+                </article>
+              </Link>
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-dashed border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 px-8 py-16 text-center">
-            <h2 className="text-2xl font-semibold text-black dark:text-white">{t.blogEmptyTitle}</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-300 leading-7">
+          <div className="rounded-[2rem] border border-dashed border-gray-300 bg-gradient-to-br from-sky-50 to-white px-8 py-16 text-center dark:border-gray-700 dark:from-gray-800/80 dark:to-gray-900">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700 dark:text-sky-400">Editorial Desk</p>
+            <h2 className="mt-4 text-3xl font-semibold text-black dark:text-white">{t.blogEmptyTitle}</h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-7 text-gray-600 dark:text-gray-300">
               {t.blogEmptyDescription}
             </p>
+            <Link
+              to="/interviews"
+              className="mt-8 inline-flex items-center rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+            >
+              {t.blogEmptyCta}
+            </Link>
           </div>
         )}
       </div>
