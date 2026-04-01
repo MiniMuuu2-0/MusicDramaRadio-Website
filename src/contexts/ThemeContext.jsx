@@ -1,7 +1,6 @@
-import { createContext, useContext, useMemo } from 'react'
-import { LanguageContext } from './LanguageContext'
-
-export const ThemeContext = createContext()
+import { useContext, useMemo } from 'react'
+import { LanguageContext } from './languageContext'
+import { ThemeContext } from './themeContext'
 
 export function ThemeProvider({ children }) {
   const { isDark, toggleTheme } = useContext(LanguageContext)

@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useLanguage } from '../hooks/useLanguage'
 import { translations } from '../utils/translations'
+import { CONTACT_EMAIL } from '../utils/siteConfig'
 
 function ContactModal({ isOpen, onClose }) {
   const { language } = useLanguage()
   const t = translations[language]
+  const [status, setStatus] = useState('idle')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,14 +16,28 @@ function ContactModal({ isOpen, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Qui potresti integrare con un servizio email
-    console.log('Form submitted:', formData)
-    alert(t.contactSuccess)
-    onClose()
+    if (!CONTACT_EMAIL) {
+      setStatus('unavailable')
+      return
+    }
+
+    const mailSubject = encodeURIComponent(formData.subject)
+    const mailBody = encodeURIComponent(
+      `${language === 'it' ? 'Nome' : 'Name'}: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `${formData.message}`
+    )
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${mailSubject}&body=${mailBody}`
+    setStatus('success')
     setFormData({ name: '', email: '', subject: '', message: '' })
   }
 
   const handleChange = (e) => {
+    if (status !== 'idle') {
+      setStatus('idle')
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -99,6 +115,20 @@ function ContactModal({ isOpen, onClose }) {
           >
             {t.contactSend}
           </button>
+
+          {status === 'success' && (
+            <p className="text-sm leading-6 text-green-700 dark:text-green-400">
+              {t.contactSuccess}
+            </p>
+          )}
+
+          {status === 'unavailable' && (
+            <p className="text-sm leading-6 text-amber-700 dark:text-amber-400">
+              {t.contactUnavailable}
+              <br />
+              {t.contactConfigHint}
+            </p>
+          )}
         </form>
       </div>
     </div>

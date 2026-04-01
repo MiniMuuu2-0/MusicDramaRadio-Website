@@ -1,6 +1,5 @@
-import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
-
-export const LanguageContext = createContext()
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { LanguageContext } from './languageContext'
 
 const STORAGE_KEYS = {
   consent: 'mdr_cookie_consent',

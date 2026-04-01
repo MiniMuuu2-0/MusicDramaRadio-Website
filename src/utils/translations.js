@@ -154,7 +154,9 @@ export const translations = {
     contactSubject: 'Oggetto',
     contactMessage: 'Il tuo messaggio',
     contactSend: 'Invia messaggio',
-    contactSuccess: 'Messaggio inviato. Ti risponderemo presto.'
+    contactSuccess: 'Il tuo client email è stato aperto con il messaggio pronto da inviare.',
+    contactUnavailable: 'Il servizio email non è ancora configurato su questo sito.',
+    contactConfigHint: 'Configura VITE_CONTACT_EMAIL per attivare l’invio dal form.'
   },
 
   en: {
@@ -312,6 +314,8 @@ export const translations = {
     contactSubject: 'Subject',
     contactMessage: 'Your message',
     contactSend: 'Send message',
-    contactSuccess: "Message sent. We'll get back to you soon."
+    contactSuccess: 'Your email client has been opened with the message ready to send.',
+    contactUnavailable: 'The email service is not configured on this site yet.',
+    contactConfigHint: 'Set VITE_CONTACT_EMAIL to activate sending from the form.'
   }
 }
