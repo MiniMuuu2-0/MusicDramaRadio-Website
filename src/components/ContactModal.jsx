@@ -1,6 +1,10 @@
 import { useState } from 'react'
+import { useLanguage } from '../hooks/useLanguage'
+import { translations } from '../utils/translations'
 
 function ContactModal({ isOpen, onClose }) {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,7 +16,7 @@ function ContactModal({ isOpen, onClose }) {
     e.preventDefault()
     // Qui potresti integrare con un servizio email
     console.log('Form submitted:', formData)
-    alert('Message sent! We\'ll get back to you soon.')
+    alert(t.contactSuccess)
     onClose()
     setFormData({ name: '', email: '', subject: '', message: '' })
   }
@@ -38,14 +42,14 @@ function ContactModal({ isOpen, onClose }) {
           </svg>
         </button>
 
-        <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">Contact Us</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">{t.contactTitle}</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder={t.contactName}
               value={formData.name}
               onChange={handleChange}
               required
@@ -57,7 +61,7 @@ function ContactModal({ isOpen, onClose }) {
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder={t.contactEmail}
               value={formData.email}
               onChange={handleChange}
               required
@@ -69,7 +73,7 @@ function ContactModal({ isOpen, onClose }) {
             <input
               type="text"
               name="subject"
-              placeholder="Subject"
+              placeholder={t.contactSubject}
               value={formData.subject}
               onChange={handleChange}
               required
@@ -80,7 +84,7 @@ function ContactModal({ isOpen, onClose }) {
           <div>
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder={t.contactMessage}
               value={formData.message}
               onChange={handleChange}
               required
@@ -93,7 +97,7 @@ function ContactModal({ isOpen, onClose }) {
             type="submit"
             className="w-full bg-black dark:bg-white text-white dark:text-black py-3 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
           >
-            Send Message
+            {t.contactSend}
           </button>
         </form>
       </div>

@@ -1,27 +1,3 @@
-export const homeUpdates = [
-  {
-    id: 'update_newjeans',
-    date: '2024-12-18',
-    gradient: 'from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20',
-    dot: 'bg-purple-500',
-    text: 'text-purple-600 dark:text-purple-400'
-  },
-  {
-    id: 'update_business_proposal',
-    date: '2024-12-15',
-    gradient: 'from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20',
-    dot: 'bg-blue-500',
-    text: 'text-blue-600 dark:text-blue-400'
-  },
-  {
-    id: 'update_korean_culture',
-    date: '2024-12-10',
-    gradient: 'from-pink-50 to-red-50 dark:from-pink-900/20 dark:to-red-900/20',
-    dot: 'bg-pink-500',
-    text: 'text-pink-600 dark:text-pink-400'
-  }
-]
-
 export const homeCards = [
   {
     id: 'card_artists',

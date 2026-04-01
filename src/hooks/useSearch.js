@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
+import { artists } from '../data/artists'
+import { blogPosts } from '../data/blogPosts'
+import { interviews } from '../data/interviews'
 
-export function useSearch(query) {
+export function useSearch(query, language) {
   const [results, setResults] = useState([])
 
   useEffect(() => {
@@ -10,13 +13,24 @@ export function useSearch(query) {
     }
 
     const searchData = [
-      { type: 'artist', name: 'BTS', path: '/artists', description: 'Il gruppo K-pop più famoso al mondo' },
-      { type: 'artist', name: 'BLACKPINK', path: '/artists', description: 'Girl group di successo internazionale' },
-      { type: 'artist', name: 'Stray Kids', path: '/artists', description: 'Boy group emergente con sound unico' },
-      { type: 'blog', name: 'Il fenomeno K-pop nel 2024', path: '/blog', description: 'Analisi delle tendenze K-pop' },
-      { type: 'blog', name: 'I migliori K-drama da non perdere', path: '/blog', description: 'Selezione dei drama coreani' },
-      { type: 'interview', name: 'Intervista con [Nome Artista]', path: '/interviews', description: 'Conversazione approfondita' },
-      { type: 'interview', name: 'Dietro le quinte di [K-Drama]', path: '/interviews', description: 'Parliamo con il cast' },
+      ...artists.map((artist) => ({
+        typeKey: 'searchTypeArtist',
+        name: artist.name,
+        path: `/artists/${artist.slug}`,
+        description: artist.description[language]
+      })),
+      ...blogPosts.map((post) => ({
+        typeKey: 'searchTypeBlog',
+        name: post.title[language],
+        path: '/blog',
+        description: post.excerpt[language]
+      })),
+      ...interviews.map((interview) => ({
+        typeKey: 'searchTypeInterview',
+        name: interview.title[language],
+        path: `/interviews/${interview.slug}`,
+        description: interview.description[language]
+      }))
     ]
 
     const filtered = searchData.filter(item =>
@@ -25,7 +39,7 @@ export function useSearch(query) {
     )
 
     setResults(filtered)
-  }, [query])
+  }, [language, query])
 
   return results
 }

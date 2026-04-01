@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../hooks/useLanguage'
+import { translations } from '../utils/translations'
 import ContactModal from './ContactModal'
 
 function Footer() {
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const { language, openCookiePreferences } = useLanguage()
+  const t = translations[language]
 
   return (
     <>
@@ -14,24 +18,24 @@ function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-3">Music Drama Radio</p>
-                <h3 className="text-2xl font-semibold leading-tight mb-3">Voce italiana per la cultura pop asiatica</h3>
+                <h3 className="text-2xl font-semibold leading-tight mb-3">{t.footerTagline}</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Interviste, articoli e approfondimenti su K-pop, drama e trend culturali. Nuovi contenuti ogni settimana.
+                  {t.footerDescription}
                 </p>
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-3">Navigazione</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-3">{t.footerNavigation}</p>
                 <div className="space-y-2 text-sm">
-                  <Link to="/about" className="block text-slate-200 hover:text-white transition-colors">Chi Siamo</Link>
-                  <Link to="/artists" className="block text-slate-200 hover:text-white transition-colors">Artisti</Link>
-                  <Link to="/blog" className="block text-slate-200 hover:text-white transition-colors">Blog</Link>
-                  <Link to="/interviews" className="block text-slate-200 hover:text-white transition-colors">Interviste</Link>
+                  <Link to="/about" className="block text-slate-200 hover:text-white transition-colors">{t.navAbout}</Link>
+                  <Link to="/artists" className="block text-slate-200 hover:text-white transition-colors">{t.navArtists}</Link>
+                  <Link to="/blog" className="block text-slate-200 hover:text-white transition-colors">{t.blogTitle}</Link>
+                  <Link to="/interviews" className="block text-slate-200 hover:text-white transition-colors">{t.navInterviews}</Link>
                 </div>
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-3">Community</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-300 mb-3">{t.footerCommunity}</p>
                 <div className="flex items-center gap-3 mb-5">
                   <a
                     href="https://www.instagram.com/musicdramaradio?igsh=MmVjOTZpeGZxMzJw"
@@ -59,17 +63,31 @@ function Footer() {
                   onClick={() => setIsContactOpen(true)}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-slate-100 text-slate-900 font-semibold hover:bg-white transition-colors"
                 >
-                  Contattaci
+                  {t.footerContact}
                 </button>
               </div>
             </div>
 
             <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-slate-400">
-              <p>© 2026 Music Drama Radio. Tutti i diritti riservati.</p>
+              <p>{t.footerCopyright}</p>
               <div className="flex items-center gap-4">
-                <Link to="/privacy" className="hover:text-slate-200 transition-colors">Privacy</Link>
-                <Link to="/terms" className="hover:text-slate-200 transition-colors">Termini</Link>
-                <span>Made by Mini Muuu</span>
+                <button
+                  type="button"
+                  onClick={openCookiePreferences}
+                  className="hover:text-slate-200 transition-colors"
+                >
+                  {t.cookieSettings}
+                </button>
+                <Link to="/privacy" className="hover:text-slate-200 transition-colors">{t.footerPrivacy}</Link>
+                <Link to="/terms" className="hover:text-slate-200 transition-colors">{t.footerTerms}</Link>
+                <a
+                  href="https://minimuuu.it/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-200 transition-colors"
+                >
+                  {t.footerMadeBy}
+                </a>
               </div>
             </div>
           </div>

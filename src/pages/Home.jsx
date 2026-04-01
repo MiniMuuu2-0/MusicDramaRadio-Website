@@ -2,15 +2,46 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect, useMemo } from 'react'
 import TypewriterText from '../components/TypewriterText'
 import { useLanguage } from '../hooks/useLanguage'
+import { useSeo } from '../hooks/useSeo'
 import { translations } from '../utils/translations'
 import { homeCards } from '../data/homeContent'
 import { blogPosts } from '../data/blogPosts'
 import { interviews } from '../data/interviews'
+import { homeLandingContent } from '../content/homeLandingContent'
 
 function Home() {
   const { language } = useLanguage()
   const t = translations[language]
+  const landingContent = homeLandingContent[language]
   const [cardsVisible, setCardsVisible] = useState(false)
+
+  const faqStructuredData = useMemo(
+    () => [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: landingContent.faqItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer
+          }
+        }))
+      }
+    ],
+    [landingContent]
+  )
+
+  useSeo({
+    title: t.homeTitle,
+    description: t.homeDescription,
+    language,
+    pageName: t.siteName,
+    pageType: 'WebSite',
+    structuredData: faqStructuredData,
+    type: 'website'
+  })
 
   const dateFormatter = useMemo(() => {
     const locale = language === 'it' ? 'it-IT' : 'en-US'
@@ -21,8 +52,8 @@ function Home() {
     const blogItems = blogPosts.map((post) => ({
       id: post.id,
       type: 'blog',
-      title: post.title,
-      description: post.excerpt,
+      title: post.title[language],
+      description: post.excerpt[language],
       date: post.date,
       path: '/blog'
     }))
@@ -30,27 +61,14 @@ function Home() {
     const interviewItems = interviews.map((interview) => ({
       id: interview.id,
       type: 'interview',
-      title: interview.title,
-      description: interview.description,
+      title: interview.title[language],
+      description: interview.description[language],
       date: interview.date,
       path: '/interviews'
     }))
 
     return [...blogItems, ...interviewItems].sort((a, b) => new Date(b.date) - new Date(a.date))
-  }, [])
-
-  useEffect(() => {
-    document.title = t.homeTitle
-    document.documentElement.lang = language
-
-    let meta = document.querySelector('meta[name="description"]')
-    if (!meta) {
-      meta = document.createElement('meta')
-      meta.setAttribute('name', 'description')
-      document.head.appendChild(meta)
-    }
-    meta.setAttribute('content', t.homeDescription)
-  }, [t])
+  }, [language])
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -93,7 +111,7 @@ function Home() {
         dot: 'bg-blue-500',
         text: 'text-blue-700 dark:text-blue-300',
         badge: 'bg-blue-600 text-white',
-        label: 'BLOG'
+        label: t.homeBlogBadge
       }
     }
 
@@ -102,7 +120,7 @@ function Home() {
       dot: 'bg-pink-500',
       text: 'text-pink-700 dark:text-pink-300',
       badge: 'bg-pink-600 text-white',
-      label: 'INTERVISTA'
+      label: t.homeInterviewBadge
     }
   }
 
@@ -112,7 +130,7 @@ function Home() {
         overlay: 'from-fuchsia-500/15 to-purple-500/10',
         border: 'border-fuchsia-200/70 dark:border-fuchsia-800/50',
         tag: 'bg-fuchsia-600 text-white',
-        cta: 'Esplora artisti'
+        cta: t.homeArtistsCta
       }
     }
 
@@ -121,7 +139,7 @@ function Home() {
         overlay: 'from-cyan-500/15 to-blue-500/10',
         border: 'border-cyan-200/70 dark:border-cyan-800/50',
         tag: 'bg-cyan-600 text-white',
-        cta: 'Leggi articoli'
+        cta: t.homeBlogCta
       }
     }
 
@@ -129,7 +147,7 @@ function Home() {
       overlay: 'from-rose-500/15 to-orange-500/10',
       border: 'border-rose-200/70 dark:border-rose-800/50',
       tag: 'bg-rose-600 text-white',
-      cta: 'Guarda interviste'
+      cta: t.homeInterviewsCta
     }
   }
 
@@ -156,6 +174,40 @@ function Home() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700 dark:text-sky-400">
+              {landingContent.focusEyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-black dark:text-white">
+              {landingContent.focusTitle}
+            </h2>
+            <p className="mt-5 text-base sm:text-lg leading-8 text-gray-600 dark:text-gray-300">
+              {landingContent.focusDescription}
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {landingContent.focusItems.map((item, index) => (
+              <article
+                key={item.title}
+                className={`rounded-3xl border p-6 sm:p-8 shadow-sm ${
+                  index % 2 === 0
+                    ? 'border-sky-100 bg-sky-50/70 dark:border-sky-900/40 dark:bg-sky-900/10'
+                    : 'border-rose-100 bg-rose-50/70 dark:border-rose-900/40 dark:bg-rose-900/10'
+                }`}
+              >
+                <h3 className="text-xl font-semibold text-black dark:text-white">{item.title}</h3>
+                <p className="mt-3 text-sm sm:text-base leading-7 text-gray-700 dark:text-gray-300">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-20 bg-white dark:bg-gray-900" aria-label={t.latestUpdates}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
@@ -164,56 +216,67 @@ function Home() {
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block"></div>
+            {timelineItems.length > 0 ? (
+              <>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block"></div>
 
-            <div className="space-y-12">
-              {timelineItems.map((item) => {
-                const isBlog = item.type === 'blog'
-                const style = timelineStyle(item.type)
+                <div className="space-y-12">
+                  {timelineItems.map((item) => {
+                    const isBlog = item.type === 'blog'
+                    const style = timelineStyle(item.type)
 
-                return (
-                  <div key={item.id} className="flex flex-col md:flex-row items-center">
-                    {isBlog ? (
-                      <>
-                        <div className="md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                          <Link to={item.path} className={`block bg-gradient-to-r ${style.gradient} rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
-                            <div className="flex items-center justify-between mb-3 gap-3">
-                              <div className="flex items-center">
-                                <div className={`w-2 h-2 ${style.dot} rounded-full mr-3`}></div>
-                                <span className={`text-sm ${style.text} font-medium`}>{formatDate(item.date)}</span>
-                              </div>
-                              <span className={`text-xs font-semibold px-3 py-1 rounded-full tracking-wide ${style.badge}`}>{style.label}</span>
+                    return (
+                      <div key={item.id} className="flex flex-col md:flex-row items-center">
+                        {isBlog ? (
+                          <>
+                            <div className="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                              <Link to={item.path} className={`block bg-gradient-to-r ${style.gradient} rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
+                                <div className="flex items-center justify-between mb-3 gap-3">
+                                  <div className="flex items-center">
+                                    <div className={`w-2 h-2 ${style.dot} rounded-full mr-3`}></div>
+                                    <span className={`text-sm ${style.text} font-medium`}>{formatDate(item.date)}</span>
+                                  </div>
+                                  <span className={`text-xs font-semibold px-3 py-1 rounded-full tracking-wide ${style.badge}`}>{style.label}</span>
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">{item.title}</h3>
+                                <p className="text-gray-700 dark:text-gray-300 text-sm">{item.description}</p>
+                              </Link>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">{item.title}</h3>
-                            <p className="text-gray-700 dark:text-gray-300 text-sm">{item.description}</p>
-                          </Link>
-                        </div>
-                        <div className={`hidden md:block w-4 h-4 ${style.dot} rounded-full border-4 border-white dark:border-gray-900 relative z-10`}></div>
-                        <div className="md:w-1/2 md:pl-8"></div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="md:w-1/2 md:pr-8"></div>
-                        <div className={`hidden md:block w-4 h-4 ${style.dot} rounded-full border-4 border-white dark:border-gray-900 relative z-10`}></div>
-                        <div className="md:w-1/2 md:pl-8 mb-4 md:mb-0">
-                          <Link to={item.path} className={`block bg-gradient-to-r ${style.gradient} rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
-                            <div className="flex items-center justify-between mb-3 gap-3">
-                              <div className="flex items-center">
-                                <div className={`w-2 h-2 ${style.dot} rounded-full mr-3`}></div>
-                                <span className={`text-sm ${style.text} font-medium`}>{formatDate(item.date)}</span>
-                              </div>
-                              <span className={`text-xs font-semibold px-3 py-1 rounded-full tracking-wide ${style.badge}`}>{style.label}</span>
+                            <div className={`hidden md:block w-4 h-4 ${style.dot} rounded-full border-4 border-white dark:border-gray-900 relative z-10`}></div>
+                            <div className="md:w-1/2 md:pl-8"></div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="md:w-1/2 md:pr-8"></div>
+                            <div className={`hidden md:block w-4 h-4 ${style.dot} rounded-full border-4 border-white dark:border-gray-900 relative z-10`}></div>
+                            <div className="md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                              <Link to={item.path} className={`block bg-gradient-to-r ${style.gradient} rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
+                                <div className="flex items-center justify-between mb-3 gap-3">
+                                  <div className="flex items-center">
+                                    <div className={`w-2 h-2 ${style.dot} rounded-full mr-3`}></div>
+                                    <span className={`text-sm ${style.text} font-medium`}>{formatDate(item.date)}</span>
+                                  </div>
+                                  <span className={`text-xs font-semibold px-3 py-1 rounded-full tracking-wide ${style.badge}`}>{style.label}</span>
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">{item.title}</h3>
+                                <p className="text-gray-700 dark:text-gray-300 text-sm">{item.description}</p>
+                              </Link>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">{item.title}</h3>
-                            <p className="text-gray-700 dark:text-gray-300 text-sm">{item.description}</p>
-                          </Link>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
+                          </>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </>
+            ) : (
+              <div className="rounded-3xl border border-dashed border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 px-8 py-14 text-center">
+                <h3 className="text-2xl font-semibold text-black dark:text-white">{t.homeEmptyTitle}</h3>
+                <p className="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-300 leading-7">
+                  {t.homeEmptyDescription}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="text-center mt-12">
@@ -266,6 +329,36 @@ function Home() {
                 </Link>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-gray-400">
+              {landingContent.faqEyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-black dark:text-white">
+              {landingContent.faqTitle}
+            </h2>
+            <p className="mt-5 text-base sm:text-lg leading-8 text-gray-600 dark:text-gray-300">
+              {landingContent.faqDescription}
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {landingContent.faqItems.map((item) => (
+              <article
+                key={item.question}
+                className="rounded-3xl border border-gray-200 bg-gray-50/90 p-6 sm:p-8 dark:border-gray-700 dark:bg-gray-800/80"
+              >
+                <h3 className="text-xl font-semibold text-black dark:text-white">{item.question}</h3>
+                <p className="mt-4 text-sm sm:text-base leading-7 text-gray-700 dark:text-gray-300">
+                  {item.answer}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

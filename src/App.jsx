@@ -1,13 +1,17 @@
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { LanguageProvider } from './contexts/LanguageContext'
+import CookieConsentBanner from './components/CookieConsentBanner'
+import LanguageSelectionModal from './components/LanguageSelectionModal'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Artists from './pages/Artists'
+import ArtistDetail from './pages/ArtistDetail'
 import Blog from './pages/Blog'
 import Interviews from './pages/Interviews'
+import InterviewDetail from './pages/InterviewDetail'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
@@ -34,14 +38,18 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/artists" element={<Artists />} />
+                <Route path="/artists/:slug" element={<ArtistDetail />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/interviews" element={<Interviews />} />
+                <Route path="/interviews/:slug" element={<InterviewDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
               </Routes>
             </main>
             <Footer />
+            <CookieConsentBanner />
+            <LanguageSelectionModal />
           </div>
         </Router>
       </ThemeProvider>

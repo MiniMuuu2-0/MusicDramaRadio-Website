@@ -1,27 +1,60 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
+import { useLanguage } from '../hooks/useLanguage'
 import { useTheme } from '../hooks/useTheme'
 import { useSearch } from '../hooks/useSearch'
 import { translations } from '../utils/translations'
 
+function LanguageSwitcher({ language, onChange, label }) {
+  const options = ['it', 'en']
+
+  return (
+    <div
+      className="inline-flex items-center rounded-full border border-gray-200 bg-white/80 p-1 dark:border-gray-700 dark:bg-gray-800/80"
+      aria-label={label}
+      role="group"
+    >
+      {options.map((option) => {
+        const isActive = language === option
+
+        return (
+          <button
+            key={option}
+            type="button"
+            onClick={() => onChange(option)}
+            className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
+              isActive
+                ? 'bg-slate-950 text-white dark:bg-white dark:text-slate-950'
+                : 'text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white'
+            }`}
+          >
+            {option}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 function Navbar() {
   const location = useLocation()
   const { isDark, toggleTheme } = useTheme()
-  const language = 'it'
+  const { language, selectLanguage } = useLanguage()
   const [searchQuery, setSearchQuery] = useState('')
   const [showResults, setShowResults] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const searchResults = useSearch(searchQuery)
+  const searchResults = useSearch(searchQuery, language)
   const t = translations[language]
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path, nested = false) =>
+    nested ? location.pathname === path || location.pathname.startsWith(`${path}/`) : location.pathname === path
 
   return (
     <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="flex justify-between items-center h-14">
           <Link to="/" className="text-lg font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-            Music Drama
+            {t.siteName}
           </Link>
 
           {/* Desktop Menu */}
@@ -34,19 +67,19 @@ function Navbar() {
                   : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
             >
-              Chi Siamo
+              {t.navAbout}
               {isActive('/about') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
             <Link
               to="/artists"
               className={`text-sm transition-all duration-200 relative ${
-                isActive('/artists')
+                isActive('/artists', true)
                   ? 'text-black dark:text-white font-medium'
                   : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
             >
-              Artisti
-              {isActive('/artists') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
+              {t.navArtists}
+              {isActive('/artists', true) && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
             <Link
               to="/blog"
@@ -56,19 +89,19 @@ function Navbar() {
                   : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
             >
-              Blog
+              {t.blogTitle}
               {isActive('/blog') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
             <Link
               to="/interviews"
               className={`text-sm transition-all duration-200 relative ${
-                isActive('/interviews')
+                isActive('/interviews', true)
                   ? 'text-black dark:text-white font-medium'
                   : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
             >
-              Interviste
-              {isActive('/interviews') && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
+              {t.navInterviews}
+              {isActive('/interviews', true) && <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-black dark:bg-white rounded-full"></div>}
             </Link>
           </div>
 
@@ -97,14 +130,20 @@ function Navbar() {
                       onClick={() => setShowResults(false)}
                     >
                       <div className="text-sm font-medium text-black dark:text-white">{result.name}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{result.type}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{t[result.typeKey]}</div>
                     </Link>
                   ))}
                 </div>
               )}
             </div>
+            <LanguageSwitcher
+              language={language}
+              onChange={selectLanguage}
+              label={t.chooseLanguage}
+            />
             <button
               onClick={toggleTheme}
+              aria-label={isDark ? t.themeToggleLight : t.themeToggleDark}
               className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             >
               {isDark ? (
@@ -121,8 +160,14 @@ function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher
+              language={language}
+              onChange={selectLanguage}
+              label={t.chooseLanguage}
+            />
             <button
               onClick={toggleTheme}
+              aria-label={isDark ? t.themeToggleLight : t.themeToggleDark}
               className="p-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             >
               {isDark ? (
@@ -167,18 +212,18 @@ function Navbar() {
                       : 'text-gray-600 dark:text-gray-400'
                   }`}
                 >
-              Chi Siamo
+                  {t.navAbout}
                 </Link>
                 <Link
                   to="/artists"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-2 text-base ${
-                    isActive('/artists')
+                    isActive('/artists', true)
                       ? 'text-black dark:text-white font-medium'
                       : 'text-gray-600 dark:text-gray-400'
                   }`}
                 >
-              Artisti
+                  {t.navArtists}
                 </Link>
                 <Link
                   to="/blog"
@@ -189,18 +234,18 @@ function Navbar() {
                       : 'text-gray-600 dark:text-gray-400'
                   }`}
                 >
-              Blog
+                  {t.blogTitle}
                 </Link>
                 <Link
                   to="/interviews"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-2 text-base ${
-                    isActive('/interviews')
+                    isActive('/interviews', true)
                       ? 'text-black dark:text-white font-medium'
                       : 'text-gray-600 dark:text-gray-400'
                   }`}
                 >
-              Interviste
+                  {t.navInterviews}
                 </Link>
               </div>
             </div>
