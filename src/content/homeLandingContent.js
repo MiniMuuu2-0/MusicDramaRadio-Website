@@ -29,7 +29,7 @@ export const homeLandingContent = {
     statusEyebrow: 'Stato Del Progetto',
     statusTitle: 'Un archivio in crescita, costruito contenuto dopo contenuto',
     statusDescription:
-      'Il sito sta prendendo forma con un’impostazione editoriale chiara: profili da sfogliare, interviste da ascoltare e leggere, articoli pronti a entrare appena arrivano i materiali definitivi.',
+      'Il sito raccoglie profili da sfogliare, interviste da ascoltare e leggere, e pagine editoriali dedicate alla cultura pop asiatica.',
     statusCards: [
       {
         key: 'artists',
@@ -44,13 +44,13 @@ export const homeLandingContent = {
         label: 'Blog'
       }
     ],
-    runwayTitle: 'Cosa stiamo preparando ora',
+    runwayTitle: 'Linee editoriali',
     runwayDescription:
-      'Mentre i nuovi materiali vengono finalizzati, il sito viene ottimizzato per ospitare in modo coerente artisti, interviste, gallery editoriali e futuri articoli lunghi.',
+      'Music Drama Radio organizza contenuti, voci e immagini in un formato coerente tra profili, interviste, gallery editoriali e articoli.',
     runwayItems: [
-      'Nuove interviste pronte a entrare con audio, trascrizione e gallery.',
-      'Nuovi artisti da pubblicare nella sezione Parliamo di....',
-      'Template blog già pronti per i primi articoli editoriali reali.'
+      'Interviste con audio, trascrizione bilingue e gallery fotografica.',
+      'Profili editoriali dedicati ad artisti, gruppi e scene musicali.',
+      'Spazi pensati per articoli, approfondimenti e racconti culturali.'
     ],
     faqEyebrow: 'Domande Frequenti',
     faqTitle: 'Cosa trova una persona su Music Drama Radio?',
@@ -109,7 +109,7 @@ export const homeLandingContent = {
     statusEyebrow: 'Project Status',
     statusTitle: 'A growing archive, built piece by piece',
     statusDescription:
-      'The site is taking shape with a clear editorial structure: profiles to browse, interviews to listen to and read, and article pages ready as soon as the final material arrives.',
+      'The site brings together profiles to browse, interviews to listen to and read, and editorial pages dedicated to Asian pop culture.',
     statusCards: [
       {
         key: 'artists',
@@ -124,13 +124,13 @@ export const homeLandingContent = {
         label: 'Blog'
       }
     ],
-    runwayTitle: 'What we are preparing now',
+    runwayTitle: 'Editorial directions',
     runwayDescription:
-      'While new materials are being finalized, the site is being refined to host artists, interviews, editorial galleries and future long-form articles in a consistent way.',
+      'Music Drama Radio organizes voices, visuals and stories into a consistent format across profiles, interviews, editorial galleries and articles.',
     runwayItems: [
-      'New interviews ready to be published with audio, transcript and gallery.',
-      'New artists ready to enter the Let’s Talk About... section.',
-      'Blog templates already prepared for the first real editorial articles.'
+      'Interviews with audio, bilingual transcript and photo gallery.',
+      'Editorial profiles focused on artists, groups and music scenes.',
+      'Spaces designed for features, deep dives and cultural storytelling.'
     ],
     faqEyebrow: 'FAQ',
     faqTitle: 'What can someone find on Music Drama Radio?',

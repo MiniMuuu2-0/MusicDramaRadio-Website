@@ -248,11 +248,11 @@ function Home() {
                   <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
                     {card.key === 'blog'
                       ? language === 'it'
-                        ? 'Struttura pronta per i primi articoli veri.'
-                        : 'Structure ready for the first real articles.'
+                        ? 'Spazio dedicato ad articoli e approfondimenti editoriali.'
+                        : 'A dedicated space for editorial articles and features.'
                       : language === 'it'
-                        ? 'Contenuti gia online e pronti a crescere.'
-                        : 'Content already online and ready to grow.'}
+                        ? 'Contenuti editoriali gia presenti nel sito.'
+                        : 'Editorial content already available on the site.'}
                   </p>
                 </article>
               ))}

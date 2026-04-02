@@ -29,9 +29,9 @@ export const translations = {
     latestUpdates: 'Ultimi Aggiornamenti',
     stayUpdated: 'Rimani aggiornato con i nostri contenuti più recenti',
     viewAllUpdates: 'Vedi tutti gli aggiornamenti',
-    homeEmptyTitle: 'I nuovi contenuti arriveranno presto',
+    homeEmptyTitle: 'Scopri l’universo editoriale di Music Drama Radio',
     homeEmptyDescription:
-      'Stiamo preparando articoli, interviste e aggiornamenti. Appena avremo i materiali definitivi, li pubblicheremo qui.',
+      'Interviste, profili e approfondimenti convivono in un archivio bilingue dedicato alla cultura pop asiatica.',
     card_artists_title: 'Parliamo di...',
     card_artists_subtitle: 'Music Drama • Playlist',
     card_artists_desc: 'Scopri gruppi, artisti e storie che vogliamo raccontare',
@@ -113,9 +113,9 @@ export const translations = {
     artistsSeoTitle: 'Artisti K-pop, Thai pop e J-pop - Music Drama Radio',
     artistsSeoDescription:
       'Esplora una selezione editoriale di artisti e scene tra K-pop, Thai pop, T-pop e J-pop su Music Drama Radio.',
-    artistsEmptyTitle: 'La sezione Parliamo di... e pronta per i contenuti reali',
+    artistsEmptyTitle: 'Una sezione dedicata a gruppi, artisti e scene musicali',
     artistsEmptyDescription:
-      'La sezione e pronta a ospitare artisti, schede e immagini definitive.',
+      'Parliamo di... raccoglie profili editoriali e percorsi visivi dedicati alla musica asiatica.',
     artistsEmptyCta: 'Torna alla home',
 
     blogTitle: 'Blog',
@@ -125,9 +125,9 @@ export const translations = {
     blogSeoDescription:
       'Leggi articoli e approfondimenti su K-drama, cultura coreana, K-pop, Thai pop, J-pop e intrattenimento asiatico.',
     blogReadMore: 'Leggi di più',
-    blogEmptyTitle: 'Il blog e pronto per gli articoli reali',
+    blogEmptyTitle: 'Uno spazio per articoli, approfondimenti e storie',
     blogEmptyDescription:
-      'Il blog e pronto per ospitare titoli, date e testi definitivi.',
+      'Il blog raccoglie letture editoriali dedicate a musica, serie e cultura pop asiatica.',
     blogEmptyCta: 'Scopri le interviste',
 
     interviewsDescription:
@@ -148,9 +148,9 @@ export const translations = {
     interviewsThanks: 'Ringraziamenti',
     interviewsTranscriptShow: 'Mostra testo',
     interviewsTranscriptHide: 'Nascondi',
-    interviewsEmptyTitle: 'La sezione interviste e pronta per il materiale definitivo',
+    interviewsEmptyTitle: 'Conversazioni, backstage e voci dal settore',
     interviewsEmptyDescription:
-      'La sezione e pronta a ospitare nomi, date, durate e descrizioni definitive.',
+      'La sezione interviste raccoglie audio, trascrizioni e gallery in un formato editoriale ordinato.',
     interviewsEmptyCta: 'Esplora Parliamo di...',
 
     contactTitle: 'Contattaci',
@@ -194,9 +194,9 @@ export const translations = {
     latestUpdates: 'Latest Updates',
     stayUpdated: 'Stay updated with our newest content',
     viewAllUpdates: 'View all updates',
-    homeEmptyTitle: 'New content will arrive soon',
+    homeEmptyTitle: 'Discover the editorial world of Music Drama Radio',
     homeEmptyDescription:
-      'We are preparing articles, interviews and updates. As soon as the final material is ready, it will be published here.',
+      'Interviews, profiles and features come together in a bilingual archive dedicated to Asian pop culture.',
     card_artists_title: "Let's Talk About...",
     card_artists_subtitle: 'Music Drama • Playlist',
     card_artists_desc: 'Discover artists, groups and stories we want to spotlight',
@@ -278,9 +278,9 @@ export const translations = {
     artistsSeoTitle: 'K-pop, Thai pop and J-pop artists - Music Drama Radio',
     artistsSeoDescription:
       'Explore an editorial selection of artists and scenes across K-pop, Thai pop, T-pop and J-pop on Music Drama Radio.',
-    artistsEmptyTitle: `The "Let's Talk About..." section is ready for real content`,
+    artistsEmptyTitle: `A space dedicated to artists, groups and music scenes`,
     artistsEmptyDescription:
-      'This section is ready for final artists, profiles and images.',
+      `Let's Talk About... brings together editorial profiles and visual journeys focused on Asian music.`,
     artistsEmptyCta: 'Back to home',
 
     blogTitle: 'Blog',
@@ -290,9 +290,9 @@ export const translations = {
     blogSeoDescription:
       'Read articles and features on K-dramas, Korean culture, K-pop, Thai pop, J-pop and Asian entertainment.',
     blogReadMore: 'Read more',
-    blogEmptyTitle: 'The blog is ready for real articles',
+    blogEmptyTitle: 'A space for articles, features and cultural stories',
     blogEmptyDescription:
-      'The blog is ready for final titles, dates and article texts.',
+      'The blog collects editorial reading on music, series and Asian pop culture.',
     blogEmptyCta: 'Explore interviews',
 
     interviewsDescription:
@@ -313,9 +313,9 @@ export const translations = {
     interviewsThanks: 'Acknowledgements',
     interviewsTranscriptShow: 'Show text',
     interviewsTranscriptHide: 'Hide',
-    interviewsEmptyTitle: 'The interviews section is ready for final material',
+    interviewsEmptyTitle: 'Conversations, backstage stories and voices from the field',
     interviewsEmptyDescription:
-      'This section is ready for final names, dates, durations and interview descriptions.',
+      'The interviews section brings together audio, transcripts and galleries in a clear editorial format.',
     interviewsEmptyCta: "Explore Let's Talk About...",
 
     contactTitle: 'Contact Us',
