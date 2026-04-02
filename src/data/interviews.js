@@ -41,6 +41,41 @@ const paoloDionisiGallery = [
   }
 ]
 
+const koreaGallery = [
+  {
+    id: 'img-6476',
+    src: `${import.meta.env.BASE_URL}interviews/korea/img-6476.jpg`,
+    alt: {
+      it: 'Intervista in Ambasciata d’Italia a Seoul con l’Ambasciatrice Emilia Gatto',
+      en: 'Interview at the Embassy of Italy in Seoul with Ambassador Emilia Gatto'
+    }
+  },
+  {
+    id: 'img-6477',
+    src: `${import.meta.env.BASE_URL}interviews/korea/img-6477.jpg`,
+    alt: {
+      it: 'Momento di conversazione durante l’intervista a Seoul',
+      en: 'Conversation moment during the interview in Seoul'
+    }
+  },
+  {
+    id: 'img-6479',
+    src: `${import.meta.env.BASE_URL}interviews/korea/img-6479.jpg`,
+    alt: {
+      it: 'Scatto istituzionale con l’Ambasciatrice Emilia Gatto',
+      en: 'Institutional portrait with Ambassador Emilia Gatto'
+    }
+  },
+  {
+    id: 'img-6481',
+    src: `${import.meta.env.BASE_URL}interviews/korea/img-6481.jpg`,
+    alt: {
+      it: 'Foto ricordo al termine dell’incontro in Ambasciata',
+      en: 'Photo taken at the end of the meeting at the Embassy'
+    }
+  }
+]
+
 export const interviews = [
   {
     id: 'paolo-dionisi',
@@ -69,6 +104,24 @@ export const interviews = [
       en: 'Paolo Dionisi and the editorial team in front of the Embassy of Italy in Bangkok backdrop'
     },
     audio: `${import.meta.env.BASE_URL}interviews-paolo-dionisi.mp3`,
+    topics: {
+      it: [
+        'Relazioni storiche tra Italia e Thailandia e nuove direzioni strategiche.',
+        'Percezione reciproca tra cultura thailandese e cultura italiana.',
+        'Soft power, moda, cucina e immagine dell’Italia nel paese.',
+        'Scambi economici, macchinari e dinamiche commerciali.',
+        'Lingua italiana, universita e nuove generazioni.',
+        'Il ruolo dei social media nella diplomazia culturale.'
+      ],
+      en: [
+        'Historical ties between Italy and Thailand and new strategic directions.',
+        'Mutual perceptions between Thai culture and Italian culture.',
+        'Soft power, fashion, food and the image of Italy in the country.',
+        'Economic exchange, machinery and trade dynamics.',
+        'Italian language, universities and younger generations.',
+        'The role of social media in cultural diplomacy.'
+      ]
+    },
     acknowledgements: {
       it: 'Si ringraziano l’Ambasciatore Paolo Dionisi per la disponibilità all’intervista, Maria Sica, direttrice dell’Istituto Italiano di Cultura di Bangkok, e il team dell’Ambasciata d’Italia a Bangkok per l’accoglienza e il supporto.',
       en: 'Special thanks to Ambassador Paolo Dionisi for the interview, to Maria Sica, director of the Italian Cultural Institute in Bangkok, and to the team of the Embassy of Italy in Bangkok for their hospitality and support.'
@@ -178,6 +231,148 @@ export const interviews = [
       ]
     },
     gallery: paoloDionisiGallery
+  },
+  {
+    id: 'korea-emilia-gatto',
+    slug: 'emilia-gatto-seoul',
+    title: {
+      it: 'Intervista a Emilia Gatto, Ambasciatrice d’Italia in Corea del Sud',
+      en: 'Interview with Emilia Gatto, Ambassador of Italy to South Korea'
+    },
+    description: {
+      it: 'Conversazione registrata a Seoul con l’Ambasciatrice Emilia Gatto su relazioni diplomatiche tra Italia e Corea del Sud, scambi culturali, lingua italiana, universita e nuove opportunita per chi guarda alla Corea.',
+      en: 'A conversation recorded in Seoul with Ambassador Emilia Gatto about diplomatic relations between Italy and South Korea, cultural exchange, the Italian language, universities and new opportunities for people looking at Korea.'
+    },
+    date: '2025-10-22',
+    time: '11:30',
+    duration: '13:06',
+    location: {
+      it: 'Seoul',
+      en: 'Seoul'
+    },
+    guest: {
+      it: 'Emilia Gatto',
+      en: 'Emilia Gatto'
+    },
+    image: `${import.meta.env.BASE_URL}interviews/korea/img-6479.jpg`,
+    imageAlt: {
+      it: 'Intervista in Ambasciata d’Italia a Seoul con l’Ambasciatrice Emilia Gatto',
+      en: 'Interview at the Embassy of Italy in Seoul with Ambassador Emilia Gatto'
+    },
+    audio: `${import.meta.env.BASE_URL}interviews-korea.m4a`,
+    topics: {
+      it: [
+        'Il ruolo dell’Ambasciata italiana in Corea del Sud e le priorita del sistema Italia a Seoul.',
+        'La crescita dell’interesse reciproco tra Italia e Corea, anche attraverso cultura pop e social media.',
+        'Accoglienza degli italiani che si trasferiscono in Corea e attenzione a scambi universitari e accademici.',
+        'L’immagine dell’Italia in Corea tra moda, design, food, lusso e alta tecnologia.',
+        'Promozione della lingua italiana, programmi universitari e iniziative come Study in Italy.',
+        'Un messaggio ai giovani e a chi immagina un percorso professionale o imprenditoriale in Corea del Sud.'
+      ],
+      en: [
+        'The role of the Italian Embassy in South Korea and the main priorities of the Italian system in Seoul.',
+        'The growing mutual interest between Italy and Korea, including the role of pop culture and social media.',
+        'Support for Italians relocating to Korea, with strong attention to academic and university exchange.',
+        'Italy’s image in Korea across fashion, design, food, luxury and advanced technology.',
+        'Promotion of the Italian language, university paths and initiatives such as Study in Italy.',
+        'A message to younger generations and to people considering a professional or entrepreneurial path in South Korea.'
+      ]
+    },
+    acknowledgements: {
+      it: 'Si ringraziano l’Ambasciatrice Emilia Gatto e Andrea Ferrara, Primo Segretario Capo Ufficio Consolare e Culturale Ambasciata d’Italia a Seoul, per il tempo dedicato all’intervista e per l’accoglienza riservata alla redazione.',
+      en: 'Special thanks to Ambassador Emilia Gatto and Andrea Ferrara, First Secretary and Head of the Consular and Cultural Office at the Embassy of Italy in Seoul, for their time and for welcoming the editorial team.'
+    },
+    transcript: {
+      it: [
+        {
+          startTime: 0,
+          endTime: 86,
+          question: 'Music Drama: Qual e oggi il ruolo principale dell’Ambasciata italiana in Corea del Sud?',
+          answer:
+            'Emilia Gatto: L’Ambasciata lavora anzitutto per rafforzare le relazioni diplomatiche tra Italia e Corea del Sud, che hanno una storia lunga oltre 140 anni. Le priorita toccano il dialogo politico, i rapporti economico-commerciali e il grande spazio della cultura, coordinando il sistema Italia presente nel paese.'
+        },
+        {
+          startTime: 86,
+          endTime: 186,
+          question: 'Music Drama: Perche la Corea interessa sempre di piu gli italiani, soprattutto i piu giovani?',
+          answer:
+            'Emilia Gatto: La Corea viene percepita come un paese del futuro, capace di attrarre nuove generazioni e professionisti grazie a uno sviluppo rapido e molto visibile sul piano internazionale. Cresce pero anche il movimento opposto: sempre piu coreani guardano all’Italia con interesse e curiosita.'
+        },
+        {
+          startTime: 186,
+          endTime: 272,
+          question: 'Music Drama: Che tipo di supporto offrite agli italiani che si trasferiscono o arrivano in Corea del Sud?',
+          answer:
+            'Emilia Gatto: L’Ambasciata cura da vicino il rapporto con la comunita italiana, organizza momenti di orientamento e accoglienza in Residenza e aiuta a capire servizi, consolato e primi passaggi pratici. Grande attenzione viene data anche agli scambi accademici e universitari, che stanno crescendo molto.'
+        },
+        {
+          startTime: 272,
+          endTime: 388,
+          question: 'Music Drama: Come viene percepita la cultura italiana dalla popolazione coreana?',
+          answer:
+            'Emilia Gatto: In Corea l’Italia resta fortemente associata a moda, food, design e lusso, e c’e un amore sincero per musica, opera, storia e radici culturali italiane. La sfida diplomatica e culturale e mostrare che l’Italia e anche innovazione, ricerca e alta tecnologia.'
+        },
+        {
+          startTime: 388,
+          endTime: 539,
+          question: 'Music Drama: Quale lavoro fate sulla lingua italiana e sui percorsi di studio tra i due paesi?',
+          answer:
+            'Emilia Gatto: La diffusione dell’italiano viene promossa con corsi, attivita dell’Istituto Italiano di Cultura e iniziative di orientamento verso universita italiane di eccellenza. Il messaggio ai giovani coreani e chiaro: oggi si puo studiare in Italia anche attraverso programmi in inglese, avvicinandosi al tempo stesso alla nostra lingua e alla nostra cultura.'
+        },
+        {
+          startTime: 539,
+          endTime: 783,
+          question: 'Music Drama: Che messaggio darebbe a giovani, professionisti e imprenditori italiani che guardano alla Corea del Sud?',
+          answer:
+            'Emilia Gatto: La Corea del Sud e un paese in cui si puo vivere bene e costruire relazioni profonde. I coreani, una volta superata la prima riservatezza, mostrano una forte passione per bellezza, arte e cultura, e proprio qui nasce una grande sintonia con l’Italia. Per questo vale la pena venire, conoscere il contesto e costruire ponti veri tra i due paesi.'
+        }
+      ],
+      en: [
+        {
+          startTime: 0,
+          endTime: 86,
+          question: 'Music Drama: What is the main role of the Italian Embassy in South Korea today?',
+          answer:
+            'Emilia Gatto: The Embassy works first of all to strengthen diplomatic relations between Italy and South Korea, a relationship built over more than 140 years. The priorities include political dialogue, economic and trade relations, and a major focus on culture, while coordinating the wider Italian system active in the country.'
+        },
+        {
+          startTime: 86,
+          endTime: 186,
+          question: 'Music Drama: Why is Korea drawing more and more interest from Italians, especially younger generations?',
+          answer:
+            'Emilia Gatto: Korea is increasingly seen as a country of the future, capable of attracting young people and professionals thanks to its rapid development and strong international visibility. At the same time, the reverse movement is also growing, with more and more Koreans looking at Italy with real interest.'
+        },
+        {
+          startTime: 186,
+          endTime: 272,
+          question: 'Music Drama: What kind of support do you offer Italians who move to or arrive in South Korea?',
+          answer:
+            'Emilia Gatto: The Embassy works closely with the Italian community, organizing orientation and welcome moments at the Residence and helping newcomers understand services, consular structures and the first practical steps. There is also strong attention to academic and university exchange, which is growing rapidly.'
+        },
+        {
+          startTime: 272,
+          endTime: 388,
+          question: 'Music Drama: How is Italian culture perceived by the Korean public?',
+          answer:
+            'Emilia Gatto: In Korea, Italy is still strongly associated with fashion, food, design and luxury, and there is genuine admiration for Italian music, opera, history and cultural roots. The diplomatic and cultural challenge is to show that Italy also stands for innovation, research and advanced technology.'
+        },
+        {
+          startTime: 388,
+          endTime: 539,
+          question: 'Music Drama: What work do you do around the Italian language and study paths between the two countries?',
+          answer:
+            'Emilia Gatto: The Italian language is promoted through courses, activities by the Italian Cultural Institute and orientation initiatives toward leading Italian universities. The message to Korean students is clear: today Italy can also be approached through English-language programs, while still becoming closer to the Italian language and to Italian culture.'
+        },
+        {
+          startTime: 539,
+          endTime: 783,
+          question: 'Music Drama: What message would you give to young Italians, professionals and entrepreneurs looking at South Korea?',
+          answer:
+            'Emilia Gatto: South Korea is a country where it is possible to live well and build meaningful relationships. Once the first layer of reserve is overcome, Koreans reveal a strong passion for beauty, art and culture, and that is where a real connection with Italy often begins. That is why it is worth coming here, understanding the context and building real bridges between the two countries.'
+        }
+      ]
+    },
+    gallery: koreaGallery
   }
 ]
 

@@ -30,6 +30,8 @@ function Interviews() {
     return dateFormatter.format(date)
   }
 
+  const getMetaLabel = (interview) => interview.durationLabel?.[language] || interview.duration
+
   return (
     <div className="bg-white pb-32 pt-20 dark:bg-gray-900">
       <div className="mx-auto max-w-6xl px-6">
@@ -50,7 +52,9 @@ function Interviews() {
                     <img
                       src={interview.image}
                       alt={interview.imageAlt?.[language] || interview.title[language]}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${
+                        interview.galleryType === 'document' ? 'object-contain' : 'object-cover'
+                      }`}
                     />
                   </div>
 
@@ -60,14 +64,14 @@ function Interviews() {
                     </h2>
                     <div className="mb-4 mt-3 flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400">
                       <span>{formatDate(interview.date)}</span>
-                      <span>{interview.duration}</span>
+                      <span>{getMetaLabel(interview)}</span>
                       <span>{interview.location[language]}</span>
                     </div>
                     <p className="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
                       {interview.description[language]}
                     </p>
                     <span className="inline-flex items-center rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition-colors group-hover:bg-blue-700">
-                      {t.interviewsListen}
+                      {interview.audio ? t.interviewsListen : t.interviewsOpen}
                     </span>
                   </div>
                 </article>

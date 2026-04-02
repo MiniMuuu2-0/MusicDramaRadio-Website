@@ -41,8 +41,19 @@ function InterviewDetail() {
 
   const date = new Date(interview.date)
   const formattedDate = Number.isNaN(date.getTime()) ? interview.date : dateFormatter.format(date)
-  const activeItalianEntry = interview.transcript?.it?.find((entry) => currentTime >= entry.startTime && currentTime < entry.endTime)
-  const showItalianTranscript = language === 'it' && isAudioPlaying && activeItalianEntry
+  const italianTranscript = interview.transcript?.it || []
+  const englishTranscript = interview.transcript?.en || []
+  const hasAudio = Boolean(interview.audio)
+  const hasTopics = Boolean(interview.topics?.[language]?.length)
+  const hasAcknowledgements = Boolean(interview.acknowledgements?.[language])
+  const hasEnglishTranscript = englishTranscript.length > 0
+  const activeItalianEntry = italianTranscript.find((entry) => currentTime >= entry.startTime && currentTime < entry.endTime)
+  const showItalianTranscript = language === 'it' && hasAudio && isAudioPlaying && activeItalianEntry
+  const galleryUnit =
+    interview.galleryType === 'document'
+      ? (language === 'it' ? 'pagine' : 'pages')
+      : (language === 'it' ? 'foto' : 'photos')
+  const mediaLabel = interview.durationLabel?.[language] || interview.duration
 
   return (
     <div className="bg-stone-50 pb-24 pt-10 dark:bg-gray-950">
@@ -61,7 +72,7 @@ function InterviewDetail() {
               <img
                 src={interview.image}
                 alt={interview.imageAlt?.[language] || interview.title[language]}
-                className="h-full w-full object-cover"
+                className={`h-full w-full ${interview.galleryType === 'document' ? 'object-contain' : 'object-cover'}`}
               />
             </div>
 
@@ -80,42 +91,67 @@ function InterviewDetail() {
                 <span className="rounded-full bg-gray-100 px-4 py-2 dark:bg-gray-800">
                   {formattedDate}
                 </span>
+                {interview.time && (
+                  <span className="rounded-full bg-gray-100 px-4 py-2 dark:bg-gray-800">
+                    {interview.time}
+                  </span>
+                )}
                 <span className="rounded-full bg-gray-100 px-4 py-2 dark:bg-gray-800">
-                  {interview.duration}
+                  {mediaLabel}
                 </span>
                 <span className="rounded-full bg-gray-100 px-4 py-2 dark:bg-gray-800">
                   {t.interviewsRecordedIn} {interview.location[language]}
                 </span>
               </div>
 
-              <div className="mt-8 rounded-[1.5rem] border border-gray-200 bg-stone-50 p-5 dark:border-gray-800 dark:bg-gray-950">
-                <p className="text-sm font-semibold text-black dark:text-white">{t.interviewsAudio}</p>
-                <audio
-                  controls
-                  preload="metadata"
-                  src={interview.audio}
-                  onPlay={() => {
-                    setIsAudioPlaying(true)
-                    setIsTranscriptExpanded(false)
-                  }}
-                  onPause={() => setIsAudioPlaying(false)}
-                  onEnded={() => {
-                    setIsAudioPlaying(false)
-                    setCurrentTime(0)
-                    setIsTranscriptExpanded(false)
-                  }}
-                  onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
-                  onSeeked={(event) => setCurrentTime(event.currentTarget.currentTime)}
-                  className="mt-4 w-full"
-                >
-                  {t.interviewsListen}
-                </audio>
-              </div>
+              {hasAudio && (
+                <div className="mt-8 rounded-[1.5rem] border border-gray-200 bg-stone-50 p-5 dark:border-gray-800 dark:bg-gray-950">
+                  <p className="text-sm font-semibold text-black dark:text-white">{t.interviewsAudio}</p>
+                  <audio
+                    controls
+                    preload="metadata"
+                    src={interview.audio}
+                    onPlay={() => {
+                      setIsAudioPlaying(true)
+                      setIsTranscriptExpanded(false)
+                    }}
+                    onPause={() => setIsAudioPlaying(false)}
+                    onEnded={() => {
+                      setIsAudioPlaying(false)
+                      setCurrentTime(0)
+                      setIsTranscriptExpanded(false)
+                    }}
+                    onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
+                    onSeeked={(event) => setCurrentTime(event.currentTarget.currentTime)}
+                    className="mt-4 w-full"
+                  >
+                    {t.interviewsListen}
+                  </audio>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        {language === 'en' && (
+        {hasTopics && (
+          <section className="mt-12">
+            <div className="rounded-[2rem] border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-8">
+              <h2 className="text-2xl font-semibold text-black dark:text-white">{t.interviewsTopics}</h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {interview.topics[language].map((topic) => (
+                  <article
+                    key={topic}
+                    className="rounded-[1.5rem] bg-stone-50 px-5 py-5 text-sm leading-7 text-gray-700 dark:bg-gray-950 dark:text-gray-300"
+                  >
+                    {topic}
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {language === 'en' && hasEnglishTranscript && (
           <section className="mt-12">
             <div className="rounded-[2rem] border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -129,7 +165,7 @@ function InterviewDetail() {
                 <div className="rounded-[1.5rem] border border-gray-200 bg-stone-50 p-5 dark:border-gray-800 dark:bg-gray-950">
                   <h3 className="text-lg font-semibold text-black dark:text-white">{t.interviewsTranscriptEnglish}</h3>
                   <div className="mt-5 space-y-5">
-                    {interview.transcript.en.map((entry, index) => (
+                    {englishTranscript.map((entry, index) => (
                       <article
                         key={`en-${index}`}
                         className="rounded-[1.25rem] bg-white p-5 dark:bg-gray-900"
@@ -145,24 +181,28 @@ function InterviewDetail() {
           </section>
         )}
 
-        <section className="mt-12">
-          <div className="rounded-[2rem] border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-8">
-            <h2 className="text-2xl font-semibold text-black dark:text-white">{t.interviewsThanks}</h2>
-            <p className="mt-4 max-w-4xl leading-7 text-gray-600 dark:text-gray-300">
-              {interview.acknowledgements[language]}
-            </p>
-          </div>
-        </section>
+        {hasAcknowledgements && (
+          <section className="mt-12">
+            <div className="rounded-[2rem] border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:p-8">
+              <h2 className="text-2xl font-semibold text-black dark:text-white">{t.interviewsThanks}</h2>
+              <p className="mt-4 max-w-4xl leading-7 text-gray-600 dark:text-gray-300">
+                {interview.acknowledgements[language]}
+              </p>
+            </div>
+          </section>
+        )}
 
         <section className="mt-12">
           <div className="mb-6 flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold text-black dark:text-white">{t.interviewsGallery}</h2>
+            <h2 className="text-2xl font-semibold text-black dark:text-white">
+              {interview.galleryType === 'document' ? t.interviewsDocuments : t.interviewsGallery}
+            </h2>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {interview.gallery.length} {language === 'it' ? 'foto' : 'photos'}
+              {interview.gallery.length} {galleryUnit}
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className={interview.galleryType === 'document' ? 'mx-auto max-w-3xl' : 'grid gap-6 md:grid-cols-2 xl:grid-cols-3'}>
             {interview.gallery.map((image) => (
               <article
                 key={image.id}
@@ -172,7 +212,7 @@ function InterviewDetail() {
                   src={image.src}
                   alt={image.alt?.[language] || interview.title[language]}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className={interview.galleryType === 'document' ? 'h-auto w-full object-contain' : 'h-full w-full object-cover'}
                 />
               </article>
             ))}
