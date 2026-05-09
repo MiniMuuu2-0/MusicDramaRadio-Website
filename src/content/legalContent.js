@@ -11,7 +11,7 @@ export const legalContent = {
         {
           title: '1. Titolare del trattamento',
           body:
-            "Il sito Music Drama Radio tratta i dati personali nel rispetto del Regolamento (UE) 2016/679 (GDPR) e della normativa italiana applicabile. Per richieste o chiarimenti e possibile contattare il team all'indirizzo teamminimuuu@gmail.com."
+            "Il sito Music Drama Radio tratta i dati personali nel rispetto del Regolamento (UE) 2016/679 (GDPR) e della normativa italiana applicabile. Per richieste o chiarimenti e possibile contattare il team all'indirizzo info@musicdramaradio.com."
         },
         {
           title: '2. Dati raccolti',
@@ -36,7 +36,7 @@ export const legalContent = {
         {
           title: "6. Diritti dell'interessato",
           body:
-            "L'utente puo esercitare in qualsiasi momento i diritti previsti dagli articoli 15-22 del GDPR, inclusi accesso, rettifica, cancellazione, limitazione, opposizione e portabilita dei dati, scrivendo a teamminimuuu@gmail.com. Resta salva la possibilita di proporre reclamo all'autorita di controllo competente."
+            "L'utente puo esercitare in qualsiasi momento i diritti previsti dagli articoli 15-22 del GDPR, inclusi accesso, rettifica, cancellazione, limitazione, opposizione e portabilita dei dati, scrivendo a info@musicdramaradio.com. Resta salva la possibilita di proporre reclamo all'autorita di controllo competente."
         },
         {
           title: '7. Aggiornamenti',
@@ -56,7 +56,7 @@ export const legalContent = {
         {
           title: '1. Data controller',
           body:
-            'Music Drama Radio processes personal data in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Italian law. For requests or clarifications, the team can be reached at teamminimuuu@gmail.com.'
+            'Music Drama Radio processes personal data in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Italian law. For requests or clarifications, the team can be reached at info@musicdramaradio.com.'
         },
         {
           title: '2. Data collected',
@@ -81,7 +81,7 @@ export const legalContent = {
         {
           title: '6. Data subject rights',
           body:
-            'Users may exercise at any time the rights provided by Articles 15-22 of the GDPR, including access, rectification, erasure, restriction, objection and data portability, by writing to teamminimuuu@gmail.com. The right to lodge a complaint with the competent supervisory authority remains unaffected.'
+            'Users may exercise at any time the rights provided by Articles 15-22 of the GDPR, including access, rectification, erasure, restriction, objection and data portability, by writing to info@musicdramaradio.com. The right to lodge a complaint with the competent supervisory authority remains unaffected.'
         },
         {
           title: '7. Updates',
@@ -133,7 +133,7 @@ export const legalContent = {
         {
           title: '7. Contatti',
           body:
-            'Per richieste relative a questi Termini e possibile scrivere a teamminimuuu@gmail.com.'
+            'Per richieste relative a questi Termini e possibile scrivere a info@musicdramaradio.com.'
         }
       ]
     },
@@ -178,7 +178,7 @@ export const legalContent = {
         {
           title: '7. Contact',
           body:
-            'For requests related to these Terms, you can write to teamminimuuu@gmail.com.'
+            'For requests related to these Terms, you can write to info@musicdramaradio.com.'
         }
       ]
     }
