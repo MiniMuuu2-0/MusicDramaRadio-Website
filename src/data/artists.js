@@ -105,8 +105,8 @@ function createNontTanontGallery(folder) {
       id: 'cover',
       src: `${import.meta.env.BASE_URL}artists/${folder}/cover.png`,
       alt: {
-        it: 'Cover editoriale dedicata a Nont Tanont — Tra musica e carisma',
-        en: 'Editorial cover dedicated to Nont Tanont — Between music and charisma'
+        it: 'Cover editoriale dedicata a Nont Tanont - Tra musica e carisma',
+        en: 'Editorial cover dedicated to Nont Tanont - Between music and charisma'
       }
     },
     {
@@ -121,40 +121,40 @@ function createNontTanontGallery(folder) {
       id: 'biography-1',
       src: `${import.meta.env.BASE_URL}artists/${folder}/biography-1.png`,
       alt: {
-        it: 'Biografia di Nont Tanont — dagli esordi al successo',
-        en: 'Biography of Nont Tanont — from early career to success'
+        it: 'Biografia di Nont Tanont - dagli esordi al successo',
+        en: 'Biography of Nont Tanont - from early career to success'
       }
     },
     {
       id: 'biography-2',
       src: `${import.meta.env.BASE_URL}artists/${folder}/biography-2.png`,
       alt: {
-        it: 'Nont Tanont — Monospectrum e l\'album più recente',
-        en: 'Nont Tanont — Monospectrum and the latest album'
+        it: 'Nont Tanont - Monospectrum e l\'album più recente',
+        en: 'Nont Tanont - Monospectrum and the latest album'
       }
     },
     {
       id: 'genre-style',
       src: `${import.meta.env.BASE_URL}artists/${folder}/genre-style.png`,
       alt: {
-        it: 'Genere e stile di Nont Tanont — pop, R&B e soul',
-        en: 'Genre and style of Nont Tanont — pop, R&B and soul'
+        it: 'Genere e stile di Nont Tanont - pop, R&B e soul',
+        en: 'Genre and style of Nont Tanont - pop, R&B and soul'
       }
     },
     {
       id: 'albums',
       src: `${import.meta.env.BASE_URL}artists/${folder}/albums.png`,
       alt: {
-        it: 'Discografia di Nont Tanont — tutti gli album',
-        en: 'Nont Tanont discography — all albums'
+        it: 'Discografia di Nont Tanont - tutti gli album',
+        en: 'Nont Tanont discography - all albums'
       }
     },
     {
       id: 'music-video',
       src: `${import.meta.env.BASE_URL}artists/${folder}/music-video.png`,
       alt: {
-        it: 'Ultimo video musicale di Nont Tanont — กลัวลืม (The Collection)',
-        en: 'Latest music video by Nont Tanont — กลัวลืม (The Collection)'
+        it: 'Ultimo video musicale di Nont Tanont - กลัวลืม (The Collection)',
+        en: 'Latest music video by Nont Tanont - กลัวลืม (The Collection)'
       }
     }
   ]
@@ -256,8 +256,8 @@ function createSingtoNumchokGallery(folder) {
       id: 'cover',
       src: `${import.meta.env.BASE_URL}artists/${folder}/cover.png`,
       alt: {
-        it: 'Cover editoriale di Singto Numchok — Il leone fortunato dell\'indie-pop thailandese',
-        en: 'Editorial cover of Singto Numchok — The lucky lion of Thai indie-pop'
+        it: 'Cover editoriale di Singto Numchok - Il leone fortunato dell\'indie-pop thailandese',
+        en: 'Editorial cover of Singto Numchok - The lucky lion of Thai indie-pop'
       }
     },
     {
@@ -272,48 +272,48 @@ function createSingtoNumchokGallery(folder) {
       id: 'biography-1',
       src: `${import.meta.env.BASE_URL}artists/${folder}/biography-1.png`,
       alt: {
-        it: 'Biografia di Singto Numchok — dagli esordi al riscatto personale',
-        en: 'Biography of Singto Numchok — from early life to personal redemption'
+        it: 'Biografia di Singto Numchok - dagli esordi al riscatto personale',
+        en: 'Biography of Singto Numchok - from early life to personal redemption'
       }
     },
     {
       id: 'biography-2',
       src: `${import.meta.env.BASE_URL}artists/${folder}/biography-2.png`,
       alt: {
-        it: 'Singto Numchok artista indipendente — gli ultimi progetti',
-        en: 'Singto Numchok as an independent artist — latest projects'
+        it: 'Singto Numchok artista indipendente - gli ultimi progetti',
+        en: 'Singto Numchok as an independent artist - latest projects'
       }
     },
     {
       id: 'genre-style',
       src: `${import.meta.env.BASE_URL}artists/${folder}/genre-style.png`,
       alt: {
-        it: 'Genere e stile di Singto Numchok — folk-pop, surf music e ukulele',
-        en: 'Genre and style of Singto Numchok — folk-pop, surf music and ukulele'
+        it: 'Genere e stile di Singto Numchok - folk-pop, surf music e ukulele',
+        en: 'Genre and style of Singto Numchok - folk-pop, surf music and ukulele'
       }
     },
     {
       id: 'albums',
       src: `${import.meta.env.BASE_URL}artists/${folder}/albums.png`,
       alt: {
-        it: 'Discografia di Singto Numchok — tutti gli album',
-        en: 'Singto Numchok discography — all albums'
+        it: 'Discografia di Singto Numchok - tutti gli album',
+        en: 'Singto Numchok discography - all albums'
       }
     },
     {
       id: 'eps',
       src: `${import.meta.env.BASE_URL}artists/${folder}/eps.png`,
       alt: {
-        it: 'EP di Singto Numchok — Sticky Rice, Chok Dee, TingRingTing',
-        en: 'Singto Numchok EPs — Sticky Rice, Chok Dee, TingRingTing'
+        it: 'EP di Singto Numchok - Sticky Rice, Chok Dee, TingRingTing',
+        en: 'Singto Numchok EPs - Sticky Rice, Chok Dee, TingRingTing'
       }
     },
     {
       id: 'latest-ep',
       src: `${import.meta.env.BASE_URL}artists/${folder}/latest-ep.png`,
       alt: {
-        it: 'Ultimo EP di Singto Numchok — Jaeo Into The Sea (2025)',
-        en: 'Latest EP by Singto Numchok — Jaeo Into The Sea (2025)'
+        it: 'Ultimo EP di Singto Numchok - Jaeo Into The Sea (2025)',
+        en: 'Latest EP by Singto Numchok - Jaeo Into The Sea (2025)'
       }
     }
   ]

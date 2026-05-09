@@ -3,8 +3,8 @@ const infiniteShadeSlides = (folder) => [
     type: 'image',
     src: `${import.meta.env.BASE_URL}blog/${folder}/cover.png`,
     alt: {
-      it: 'Cover — The Infinite Shade Concert, Nont Tanont × Singto Numchok, 5 aprile 2026, EventResidenz Düsseldorf',
-      en: 'Cover — The Infinite Shade Concert, Nont Tanont × Singto Numchok, 5th April 2026, EventResidenz Düsseldorf'
+      it: 'Cover -The Infinite Shade Concert, Nont Tanont × Singto Numchok, 5 aprile 2026, EventResidenz Düsseldorf',
+      en: 'Cover -The Infinite Shade Concert, Nont Tanont × Singto Numchok, 5th April 2026, EventResidenz Düsseldorf'
     }
   },
   {
@@ -78,8 +78,8 @@ export const blogPosts = [
     id: 'infinite-shade-concert',
     slug: 'the-infinite-shade-concert-nontxsingto',
     title: {
-      it: 'The Infinite Shade Concert — Nont Tanont × Singto Numchok',
-      en: 'The Infinite Shade Concert — Nont Tanont × Singto Numchok'
+      it: 'The Infinite Shade Concert - Nont Tanont × Singto Numchok',
+      en: 'The Infinite Shade Concert - Nont Tanont × Singto Numchok'
     },
     excerpt: {
       it: 'Il 5 aprile 2026 l\'EventResidenz di Düsseldorf ha ospitato uno show indimenticabile: Nont Tanont e Singto Numchok sul palco insieme per una serata di musica thai pop tra emozione, risate e canzoni destinate a restare nel cuore.',
@@ -92,8 +92,8 @@ export const blogPosts = [
     },
     coverImage: `${import.meta.env.BASE_URL}blog/infinite-shade-concert/hero.png`,
     coverAlt: {
-      it: 'The Infinite Shade Concert — Nont Tanont × Singto Numchok, EventResidenz Düsseldorf',
-      en: 'The Infinite Shade Concert — Nont Tanont × Singto Numchok, EventResidenz Düsseldorf'
+      it: 'The Infinite Shade Concert - Nont Tanont × Singto Numchok, EventResidenz Düsseldorf',
+      en: 'The Infinite Shade Concert - Nont Tanont × Singto Numchok, EventResidenz Düsseldorf'
     },
     content: {
       it: infiniteShadeSlides('infinite-shade-concert'),
