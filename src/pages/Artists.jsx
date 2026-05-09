@@ -29,9 +29,9 @@ function Artists() {
               <Link
                 key={artist.slug}
                 to={`/artists/${artist.slug}`}
-                className="group mx-auto block w-full max-w-sm"
+                className="group block w-full"
               >
-                <article className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl dark:border-gray-800 dark:bg-gray-900">
+                <article className="h-full overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl dark:border-gray-800 dark:bg-gray-900">
                   <div className="aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
                     <img
                       src={artist.image}

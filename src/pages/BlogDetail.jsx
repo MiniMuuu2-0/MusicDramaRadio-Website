@@ -98,6 +98,22 @@ function BlogDetail() {
                   )
                 }
 
+                if (block.type === 'image') {
+                  return (
+                    <div
+                      key={`${block.type}-${index}`}
+                      className="overflow-hidden rounded-[2rem] border border-gray-200 bg-stone-50 dark:border-gray-800 dark:bg-gray-900"
+                    >
+                      <img
+                        src={block.src}
+                        alt={block.alt?.[language] || post.title[language]}
+                        className="h-auto w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )
+                }
+
                 return (
                   <p
                     key={`${block.type}-${index}`}
